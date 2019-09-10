@@ -69,7 +69,7 @@ class AddProduct extends Component{
 	          <input type="file" className="form-control" name="photo-input" id="photo-input" placeholder="Add photo"/>
 	        </div>
 
-	        <button type="submit" className="btn btn-primary">Add</button>
+	        <button type="submit" className="btn btn-primary">Add Product</button>
 	    </form>
 
     );
