@@ -25,33 +25,26 @@ class Item extends Component{
     return(
       
 
-      <div className="Item userItem">
+      <div className="Item">
       <Card
           style={{
               width: '18rem'
           }}>
-          <Card.Img variant="top" src="/item2.png"/>
+          <Card.Img variant="top" src={photo}/>
           <Card.Body>
-              <Card.Title><Link to={'/products/'+id}>{name}</Link><Button variant="outline-dark">
+               <Card.Title><Link to={'/products/'+id}>{name}</Link><Button variant="outline-dark">
                       <i className="far fa-heart"></i>
                   </Button>
               </Card.Title>
-              <Card.Text></Card.Text>
-
-              <ListGroup variant="flush">
-                  <ListGroup.Item>
-                      <span className="itemDescription">{description}</span>
-                  </ListGroup.Item>
-                  <ListGroup.Item>
-                      <span className="itemPrice">{price}</span>
-                  </ListGroup.Item>
-                  
-
-              </ListGroup>
-
+              <Card.Text><span className="itemDescription">{description}</span></Card.Text>
+              <Button className="AddButton" variant="primary">Add to Cart
+                  <span className="itemPrice">${price}</span>
+              </Button>
           </Card.Body>
       </Card>
-    </div>
+  </div>
+
+   
     );
   }
 }

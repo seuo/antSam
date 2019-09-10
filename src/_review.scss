@@ -1,0 +1,39 @@
+
+.reviewForm {
+    padding: 1em;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    input {
+        border:none;
+        border-bottom:solid thin rgb(73, 81, 88);
+        border-radius:0;
+    }
+    button {
+        background-color:  $color-4;
+        border:none;
+        color:$color-1;
+
+    }
+    .btn-primary {
+        background-color:  $color-4;
+        border:none;
+        color:$color-1;
+    }
+
+    div#rating-input {
+        padding: 0;
+    }
+
+    label.btn.active.btn-primary {
+        color: $link-color;
+        background-color: $color-6;
+        border-color: rgba(255, 255, 255, 0);
+    }
+}
+
+.addReview {
+    background-color:$color-1;
+    border-top:thin solid $color-2;
+}

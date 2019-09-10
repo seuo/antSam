@@ -30,7 +30,7 @@ class Product extends Component{
           style={{
               width: '18rem'
           }}>
-          <Card.Img variant="top" src="/item2.png"/>
+          <Card.Img variant="top" src={photo}/>
           <Card.Body>
               <Card.Title><Link to={'/products/'+id}>{name}</Link><Button variant="outline-dark">
                       <i class="far fa-heart"></i>
@@ -47,7 +47,7 @@ class Product extends Component{
                   </ListGroup.Item>
                   
                   <ListGroup.Item className="edit"><Link to={'/products/'+id+'/edit'}>Edit Listing</Link></ListGroup.Item>
-                  <ListGroup.Item onClick={this.deleteProduct} className="delete">Remove Listing</ListGroup.Item>
+                  <ListGroup.Item onClick={this.deleteProduct} className="delete linkColor">Remove Listing</ListGroup.Item>
 
               </ListGroup>
 

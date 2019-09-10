@@ -16,6 +16,10 @@
     background-color:$color-1;
 }
 
+.form-group .btn-primary {
+    font-size: .9em;
+}
+
 .btn-group.btn-group-toggle {
     width: 100%;
 }
@@ -26,7 +30,7 @@
     }
 
 }
-    .listProduct {
+.listProduct {
         justify-content: center;
         display: flex;
         .AddButton {
@@ -56,7 +60,6 @@ flex-direction: column;
 justify-content: space-between;
 align-items: center;
 flex: 1 0 70%;
-
 padding: 1em;
 
 .card {
@@ -85,13 +88,15 @@ padding: 1em;
     }
     .AddButton {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         border: thin solid;
         background-color:rgba(255, 255, 255, 0);
         width:100%;
         border-radius: 0;
         color:$color-5;
         font-weight:500;
+        padding:.2em;
+        font-weight: 700;
     }
     .btn-primary {
         color: $color-5;

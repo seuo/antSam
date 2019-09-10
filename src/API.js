@@ -3,8 +3,8 @@ import axios from 'axios';
 // var url = 'http://10.2.24.12:4001/api';
 // var server = 'http://10.2.24.12:4001/';
 
-var url = 'http://localhost:4001/api';
-var server = 'http://localhost:4001/products';
+var url = 'http://localhost:4003/api';
+var server = 'http://localhost:4003/home';
 
 var api = {
 

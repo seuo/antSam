@@ -3,6 +3,18 @@
 @import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
  
+
+/* Color Theme Swatches in RGBA */
+$color-0: rgba(252,252,252, 1);
+$color-1: rgba(242,242,242, 1);
+$color-2: rgba(191,191,191, 1);
+$color-3: rgba(140,140,140, 1);
+$color-4: rgb(73, 81, 88);
+$color-5: rgba(63,63,63, 1);
+$color-6: rgba(12,12,12, 1);
+
+$link-color:#A68B3C;
+
 *{
     margin:0;
     padding:0;
@@ -17,18 +29,19 @@ h1, h2 ,h3, h4, h5 {
     font-family: 'Raleway', sans-serif;
 }
 
-/* Color Theme Swatches in RGBA */
-$color-0: rgba(252,252,252, 1);
-$color-1: rgba(242,242,242, 1);
-$color-2: rgba(191,191,191, 1);
-$color-3: rgba(140,140,140, 1);
-$color-4: rgb(73, 81, 88);
-$color-5: rgba(63,63,63, 1);
-$color-6: rgba(12,12,12, 1);
+a {
+    color:$link-color;
+}
+
+.linkColor {
+    color:$link-color;
+}
+
 
 
 @import "_products.scss";
 @import "_userAdmin.scss";
+@import "_review.scss";
 
 .wrap {
     background-color:$color-0;

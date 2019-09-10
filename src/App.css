@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
 @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+/* Color Theme Swatches in RGBA */
 * {
   margin: 0;
   padding: 0;
@@ -18,7 +19,14 @@ h1, h2, h3, h4, h5 {
   font-family: 'Raleway', sans-serif;
 }
 
-/* Color Theme Swatches in RGBA */
+a {
+  color: #A68B3C;
+}
+
+.linkColor {
+  color: #A68B3C;
+}
+
 .react-multi-carousel-item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -37,6 +45,10 @@ h1, h2, h3, h4, h5 {
 .ProductList {
   padding-top: 5em;
   background-color: #f2f2f2;
+}
+
+.form-group .btn-primary {
+  font-size: .9em;
 }
 
 .btn-group.btn-group-toggle {
@@ -147,14 +159,17 @@ h1, h2, h3, h4, h5 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   border: thin solid;
   background-color: rgba(255, 255, 255, 0);
   width: 100%;
   border-radius: 0;
   color: #3f3f3f;
   font-weight: 500;
+  padding: .2em;
+  font-weight: 700;
 }
 
 .Item .card .btn-primary {
@@ -212,6 +227,53 @@ h1, h2, h3, h4, h5 {
   background-color: #495158;
   border: none;
   color: #f2f2f2;
+}
+
+.reviewForm {
+  padding: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.reviewForm input {
+  border: none;
+  border-bottom: solid thin #495158;
+  border-radius: 0;
+}
+
+.reviewForm button {
+  background-color: #495158;
+  border: none;
+  color: #f2f2f2;
+}
+
+.reviewForm .btn-primary {
+  background-color: #495158;
+  border: none;
+  color: #f2f2f2;
+}
+
+.reviewForm div#rating-input {
+  padding: 0;
+}
+
+.reviewForm label.btn.active.btn-primary {
+  color: #A68B3C;
+  background-color: #0c0c0c;
+  border-color: rgba(255, 255, 255, 0);
+}
+
+.addReview {
+  background-color: #f2f2f2;
+  border-top: thin solid #bfbfbf;
 }
 
 .wrap {
