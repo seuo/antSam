@@ -22,4 +22,19 @@
         border:none;
         color:$color-1;
     }
+
+    label.btn.active.btn-primary {
+        color: $link-color;
+        background-color: $color-6;
+        border-color: rgba(255, 255, 255, 0);
+        font-weight:700;
+    }
+
+    .priceInput {
+        display: flex;
+        align-items: center;
+        span {
+            position: absolute;
+        }
+    }
 }

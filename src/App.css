@@ -104,10 +104,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 70%;
-          flex: 1 0 70%;
-  padding: 1em;
+  padding-top: 1em;
 }
 
 .Item .card {
@@ -229,6 +226,26 @@ a {
   color: #f2f2f2;
 }
 
+.productForm label.btn.active.btn-primary {
+  color: #A68B3C;
+  background-color: #0c0c0c;
+  border-color: rgba(255, 255, 255, 0);
+  font-weight: 700;
+}
+
+.productForm .priceInput {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.productForm .priceInput span {
+  position: absolute;
+}
+
 .reviewForm {
   padding: 1em;
   display: -webkit-box;
@@ -276,13 +293,52 @@ a {
   border-top: thin solid #bfbfbf;
 }
 
-.wrap {
+.imageGrid {
+  opacity: .95;
+  margin-top: 2em;
   background-color: #fcfcfc;
+}
+
+.imageGrid .jumbotron-fluid {
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.imageGrid .jumbotron-fluid .container {
+  padding: 1em;
+  color: #fcfcfc;
+  background-image: url("/ourstore.jpg");
+}
+
+.imageGrid .jumbotron-fluid .container h1 {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: .1em;
+  margin-bottom: 0em;
+}
+
+.imageGrid .jumbotron-fluid .container p {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: .5em;
+  margin-bottom: 0em;
+}
+
+.imageGrid .col {
+  padding: 0;
+  background-color: #bfbfbf;
+}
+
+.imageGrid .col img {
+  width: 100%;
+  border: thin solid #f2f2f2;
+}
+
+.wrap {
   height: 100vh;
 }
 
 .wrap .react-multi-carousel-track {
-  margin-left: 50px;
+  margin-left: 3.5em;
+  margin-bottom: 1em;
 }
 
 .Header {
@@ -542,6 +598,13 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.footer {
+  background-color: #3f3f3f;
+  color: #8c8c8c;
+  font-size: .9em;
+  padding: 1em;
 }
 
 @media (min-width: 576px) {

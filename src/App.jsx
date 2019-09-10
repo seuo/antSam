@@ -14,6 +14,9 @@ import {
   Button,
   Nav,
   Navbar,
+  Container,
+  Row,
+  Col,
   Image,
   FormControl,
   InputGroup
@@ -30,9 +33,18 @@ class App extends Component{
   constructor(props){
   super(props)
     this.state = {
+      visible: false,
       currentUser:{},
     }
   }
+
+openModal() {
+    this.setState({visible: true});
+}
+
+closeModal() {
+    this.setState({visible: false});
+}
 
 handleLogOut=()=>{
 
@@ -205,6 +217,14 @@ componentDidMount=()=>{
             {/* <RouteProductDetails path="/detail/:id"/> */}
             <RouteProductDetails path="/products/:id"/>
           </Router>
+ 
+          </div>
+          <div className="footer">
+                <Container>
+                <Row>
+                    <Col>Copyright 2019 threads</Col>
+                </Row>
+                </Container>
           </div>
         </div>
     );

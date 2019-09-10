@@ -42,12 +42,14 @@ a {
 @import "_products.scss";
 @import "_userAdmin.scss";
 @import "_review.scss";
+@import "_imageGrid.scss";
 
 .wrap {
-    background-color:$color-0;
+
     height:100vh;
     .react-multi-carousel-track {
-    margin-left: 50px;
+    margin-left: 3.5em;
+    margin-bottom:1em;
     }
 }
 
@@ -253,6 +255,14 @@ a {
 
 
 }
+
+.footer {
+    background-color:$color-5;
+    color:$color-3;
+    font-size:.9em;
+    padding:1em;
+}
+
 
 
 

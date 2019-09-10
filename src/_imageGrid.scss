@@ -1,0 +1,34 @@
+.imageGrid {
+    opacity: .95;
+    margin-top:2em;
+    // padding-top:1em;
+    background-color:$color-0;
+    .jumbotron-fluid {
+        padding:0;
+        margin-bottom:0;
+        .container {
+            padding:1em;
+            color:$color-0;
+            // text-shadow:.1em .1em .1em $color-6;
+            background-image:url("/ourstore.jpg");
+            h1 {
+                background-color:rgba(0, 0, 0, 0.6);
+                padding:.1em;
+                margin-bottom:0em;
+            }
+            p {
+                background-color:rgba(0, 0, 0, 0.6);
+                padding:.5em;
+                margin-bottom:0em;
+            }
+         }
+    }
+    .col {
+        padding:0;
+        background-color:$color-2;
+        img {
+            width:100%;
+            border:thin solid $color-1;
+        }
+    }
+}

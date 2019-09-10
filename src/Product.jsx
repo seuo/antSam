@@ -33,7 +33,7 @@ class Product extends Component{
           <Card.Img variant="top" src={photo}/>
           <Card.Body>
               <Card.Title><Link to={'/products/'+id}>{name}</Link><Button variant="outline-dark">
-                      <i class="far fa-heart"></i>
+                      <i className="far fa-heart"></i>
                   </Button>
               </Card.Title>
               <Card.Text></Card.Text>
