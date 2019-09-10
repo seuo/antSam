@@ -45,7 +45,8 @@ a {
 @import "_imageGrid.scss";
 
 .wrap {
-
+    display: flex;
+    flex-direction: column;
     height:100vh;
     .react-multi-carousel-track {
     margin-left: 3.5em;
@@ -203,7 +204,7 @@ a {
 .section {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    flex:1;
     .catagories {
         display:flex;
         flex-direction: column;
