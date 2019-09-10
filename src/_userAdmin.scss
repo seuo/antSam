@@ -1,0 +1,25 @@
+
+
+.productForm {
+    padding: 1em;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    input {
+        border:none;
+        border-bottom:solid thin rgb(73, 81, 88);
+        border-radius:0;
+    }
+    button {
+        background-color:  $color-4;
+        border:none;
+        color:$color-1;
+
+    }
+    .btn-primary {
+        background-color:  $color-4;
+        border:none;
+        color:$color-1;
+    }
+}
