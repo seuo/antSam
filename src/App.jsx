@@ -161,46 +161,16 @@ componentDidMount=()=>{
                       <Accordion.Collapse eventKey="0">
                           <Nav variant="pills" defaultActiveKey="/home">
                               <Nav.Item>
-                                  <Nav.Link eventKey="cat-1">NEW ITEMS</Nav.Link>
+                                  <Nav.Link eventKey="cat-1">Suits</Nav.Link>
                               </Nav.Item>
                               <Nav.Item>
-                                  <Nav.Link eventKey="cat-2">Suits</Nav.Link>
+                                  <Nav.Link eventKey="cat-2">Footwear</Nav.Link>
                               </Nav.Item>
                               <Nav.Item>
-                                  <Nav.Link eventKey="cat-3">Footwear</Nav.Link>
+                                  <Nav.Link eventKey="cat-3">Clothing</Nav.Link>
                               </Nav.Item>
                               <Nav.Item>
-                                  <Nav.Link eventKey="cat-4">Clothing</Nav.Link>
-                              </Nav.Item>
-                              <Nav.Item>
-                                  <Nav.Link eventKey="cat-5">Outdoors</Nav.Link>
-                              </Nav.Item>
-                              <Nav.Item>
-                                  <Nav.Link eventKey="cat-6">Active Wear</Nav.Link>
-                              </Nav.Item>
-                              <Nav.Item>
-                                  <Nav.Link eventKey="cat-7">Accessories</Nav.Link>
-                              </Nav.Item>
-                              <Nav.Item>
-                                  <Nav.Link eventKey="cat-8">Mobile Phones</Nav.Link>
-                              </Nav.Item>
-                              <Nav.Item>
-                                  <Nav.Link eventKey="cat-9">Toys</Nav.Link>
-                              </Nav.Item>
-                              <Nav.Item>
-                                  <Nav.Link eventKey="cat-10">Books</Nav.Link>
-                              </Nav.Item>
-                              <Nav.Item>
-                                  <Nav.Link eventKey="cat-11">Mobile Phones</Nav.Link>
-                              </Nav.Item>
-                              <Nav.Item>
-                                  <Nav.Link eventKey="cat-12">Gaming</Nav.Link>
-                              </Nav.Item>
-                              <Nav.Item>
-                                  <Nav.Link eventKey="cat-13">Music & Instruments</Nav.Link>
-                              </Nav.Item>
-                              <Nav.Item>
-                                  <Nav.Link eventKey="cat-14">Random</Nav.Link>
+                                  <Nav.Link eventKey="cat-4">Accessories</Nav.Link>
                               </Nav.Item>
                           </Nav>
                       </Accordion.Collapse>

@@ -59,8 +59,8 @@ class RouteProductDetails extends Component{
         <div className="buttons">
           <button className="edit">Edit</button>
           <button className="delete">Delete</button>
-          
-        </div>
+        
+        </div> */ }
         {
           product.reviews.map(review => {
             var reviewProps = {
@@ -71,7 +71,7 @@ class RouteProductDetails extends Component{
             return <Review {...reviewProps} />
           })
         }
-      </div> */}
+      {/* </div>  */}
 
 <div className="Item">
     <Card

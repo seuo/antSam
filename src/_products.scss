@@ -11,6 +11,46 @@
     background-color: $color-0;
  }
 
+ .custom-dot-list-style {
+     display: flex;
+     justify-content: space-between;
+     
+     .react-multi-carousel-dot {
+        padding: 0;
+        display: flex;
+        margin: 0px;
+        align-items: flex-end;
+        flex:1;
+        button {
+            display: inline-block;
+            width: 100%;
+            height: 2px;
+            border: none;
+            border-radius: 2em;
+            opacity: 1;
+            padding: 5px 5px 5px 5px;
+            box-shadow: none;
+            transition: background .5s;
+            border-width: 0;
+            border-style: solid;
+            color: grey;
+            background-color:$color-1;
+            padding: 0;
+            margin: 0;
+            margin-right: 0;
+            outline: 0;
+            cursor: pointer;
+        }
+
+    }
+    .react-multi-carousel-dot--active {
+        button {
+        background-color:$color-5;
+        height: 2px;
+        }
+    }
+}
+
 .ProductList {
     padding-top: 5em;
     background-color:$color-1;
@@ -24,12 +64,39 @@
     width: 100%;
 }
 
+.productsListing {
+    display: flex;
+    background-color:#fff;
+    padding-top:.2em;
+    .col {
+        display: flex;
+        flex: 1 0 49%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        max-width: 50%;
+        padding:1em;
+    }
+
+}
+.productsListing {
+
+    .col:nth-child(odd) {
+        border-right:solid thin $color-6;
+        border-bottom:solid thin $color-6;
+    }
+    .col:nth-child(even) {
+        border-bottom:solid thin $color-6;
+    }
+}
+
 .listings { 
     h1 {
         text-align: center;
     }
-
 }
+
+
 .listProduct {
         justify-content: center;
         display: flex;
@@ -72,18 +139,21 @@ padding-top: 1em;
     justify-content: flex-end;
     background-color:transparent;
     // height: 21em;
-    .card-img-top {
-        padding: 1em;
+    .card-img-featured {
+        padding: 0em;
+        width: 75vw;
     }
     .card-body {
         display: flex;
         justify-content: flex-end;
         flex-direction: column;
         flex: 0;
-    .card-title {
-        display:flex;
-        justify-content: space-between;
-        align-items: center;
+ 
+        .card-title {
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+
         }
     }
     .AddButton {

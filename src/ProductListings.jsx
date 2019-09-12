@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
+import FeaturedItem from './FeaturedItem';
 import Item from './Item';
 import RouteProductDetails from './RouteProductDetails';
 import {Router, Link, navigate} from '@reach/router';
 import {api} from './API';
 import Carousel from 'react-multi-carousel';
-import {Col, Image, Row, Jumbotron, Container} from 'react-bootstrap';
+import {Col, Card, Button, Image, Row, Jumbotron, Container} from 'react-bootstrap';
 
 import './App.css';
 
@@ -31,7 +32,7 @@ const responsive = {
             min: 0
         },
         items: 1,
-        partialVisibilityGutter: 70 // this is needed to tell the amount of px that should be visible.
+        partialVisibilityGutter: 80 // this is needed to tell the amount of px that should be visible.
     }
 }
 
@@ -61,13 +62,128 @@ class ProductListings extends Component {
         } = this.state;
         return (
 
-            <div className="Item carousel-container">
+        <div className="Item carousel-container">
                 <h3>Featured</h3>
                 <Carousel swipeable={true} draggable={true} showDots={true} responsive={responsive} ssr={true}
                     // means to render carousel on server-side.
                     infinite={true} autoPlay={this.props.deviceType !== "mobile"
                         ? false
-                        : false} autoPlaySpeed={1000} keyBoardControl={true} customTransition="ease all 1s" transitionDuration={500} containerClass="carousel-container" removeArrowOnDeviceType={["tablet", "mobile"]} deviceType={this.props.deviceType} dotListClass="custom-dot-list-style" itemClass="CarousalItem carousel-item-padding-40-px" partialVisbile={true}>
+                        : false} autoPlaySpeed={1000} keyBoardControl={true} customTransition="ease all .5s" transitionDuration={500} containerClass="carousel-container" removeArrowOnDeviceType={["tablet", "mobile"]} deviceType={this.props.deviceType} dotListClass="custom-dot-list-style" itemClass="CarousalItem carousel-item-padding-40-px" partialVisbile={true}>
+                <div className="Item">
+                    <Card>
+                        <Card.Img variant="featured" src={require('./suit1.png')}/>
+                        <Card.Body>
+                            <Card.Title>Dries Van Noten Pin Stripe<Button variant="outline-dark">
+                                </Button>
+                            </Card.Title>
+
+                        </Card.Body>
+                    </Card>
+                </div>
+                <div className="Item">
+                    <Card>
+                        <Card.Img variant="featured" src={require('./watch1.png')}/>
+                        <Card.Body>
+                            <Card.Title>Lorem ipsum dolor<Button variant="outline-dark">
+                                </Button>
+                            </Card.Title>
+
+                        </Card.Body>
+                    </Card>
+                </div>
+                <div className="Item">
+                    <Card>
+                        <Card.Img variant="featured" src={require('./suit2.png')}/>
+                        <Card.Body>
+                            <Card.Title>Ut ut gravida augue<Button variant="outline-dark">
+                                </Button>
+                            </Card.Title>
+
+                        </Card.Body>
+                    </Card>
+                </div>
+                <div className="Item">
+                    <Card>
+                        <Card.Img variant="featured" src={require('./footwear1.png')}/>
+                        <Card.Body>
+                            <Card.Title>Curabitur vitae<Button variant="outline-dark">
+                                </Button>
+                            </Card.Title>
+
+                        </Card.Body>
+                    </Card>
+                </div>
+                <div className="Item">
+                    <Card>
+                        <Card.Img variant="featured" src={require('./suit3.png')}/>
+                        <Card.Body>
+                            <Card.Title>Suspendisse massa<Button variant="outline-dark">
+                                </Button>
+                            </Card.Title>
+
+                        </Card.Body>
+                    </Card>
+                </div>
+                <div className="Item">
+                    <Card>
+                        <Card.Img variant="featured" src={require('./watch2.png')}/>
+                        <Card.Body>
+                            <Card.Title>Sed vel consequat ligula<Button variant="outline-dark">
+                                </Button>
+                            </Card.Title>
+
+                        </Card.Body>
+                    </Card>
+                </div>
+                <div className="Item">
+                    <Card>
+                        <Card.Img variant="featured" src={require('./footwear2.png')}/>
+                        <Card.Body>
+                            <Card.Title>Aliquam egestas<Button variant="outline-dark">
+                                </Button>
+                            </Card.Title>
+
+                        </Card.Body>
+                    </Card>
+                </div>
+                <div className="Item">
+                    <Card>
+                        <Card.Img variant="featured" src={require('./suit4.png')}/>
+                        <Card.Body>
+                            <Card.Title>Praesent quis est<Button variant="outline-dark">
+                                </Button>
+                            </Card.Title>
+
+                        </Card.Body>
+                    </Card>
+                </div>
+                <div className="Item">
+                    <Card>
+                        <Card.Img variant="featured" src={require('./footwear3.png')}/>
+                        <Card.Body>
+                            <Card.Title>Interdum et malesuada<Button variant="outline-dark">
+                                </Button>
+                            </Card.Title>
+
+                        </Card.Body>
+                    </Card>
+                </div>
+                <div className="Item">
+                    <Card>
+                        <Card.Img variant="featured" src={require('./watch3.png')}/>
+                        <Card.Body>
+                            <Card.Title>Sed ligula risus<Button variant="outline-dark">
+                                </Button>
+                            </Card.Title>
+
+                        </Card.Body>
+                    </Card>
+                </div>
+
+
+                </Carousel>
+                <Container>
+                    <Row className="productsListing">
                     {
                         products.map((item) => {
                             var props = {
@@ -79,8 +195,8 @@ class ProductListings extends Component {
 
                         })
                     }
-
-                </Carousel>
+                    </Row>
+                </Container>
                 <Container className="imageGrid">
                     <Row>
                             <Jumbotron fluid="fluid">

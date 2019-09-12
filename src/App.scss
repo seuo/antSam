@@ -208,11 +208,15 @@ a {
     .catagories {
         display:flex;
         flex-direction: column;
+
         .nav.nav-pills {
-            justify-content: space-evenly;
-            padding-top: 1em;
+            justify-content: center;
+            padding-top: 0em;
+            border-radius:0;
+            font-size:.95em;
             .nav-link {
                 color: $color-3;
+                padding:.5em;
             }
             .nav-link.active {
                 color: #fff;

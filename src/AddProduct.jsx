@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Router, Link, navigate} from '@reach/router';
 import {api} from './API';
-import CurrencyInput from 'react-currency-input-field'
 
 
 import {
@@ -25,25 +24,25 @@ class AddProduct extends Component{
 
 		e.preventDefault();
 
-		// var {} = this.props;
+		var {} = this.props;
 
 		var form = new FormData(this.form);
 
-		// api.uploadPhoto(form).then(res => {
-			// var file = res.data;
-			// console.log(file);
+		api.uploadPhoto(form).then(res => {
+			var file = res.data;
+			console.log(file);
 
 			var data = {
 				name: form.get('name-input'),
 				description: form.get('description-input'),
 				price: form.get('price-input'),
-				// photo: file,
+				photo: file,
 			}
 
 			api.addProduct(data).then(navigate('/products'));
 
 			console.log(data);
-		// });
+		});
 	}
 
 

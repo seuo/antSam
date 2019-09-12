@@ -30,7 +30,7 @@ class Product extends Component{
           style={{
               width: '18rem'
           }}>
-          <Card.Img variant="top" src={photo}/>
+          <Card.Img variant="top" src={server+photo}/>
           <Card.Body>
               <Card.Title><Link to={'/products/'+id}>{name}</Link><Button variant="outline-dark">
                       <i className="far fa-heart"></i>
