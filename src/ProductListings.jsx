@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import FeaturedItem from './FeaturedItem';
 import Item from './Item';
-import RouteProductDetails from './RouteProductDetails';
+import RouteCat from './RouteCategory'
 import {Router, Link, navigate} from '@reach/router';
 import {api} from './API';
 import Carousel from 'react-multi-carousel';
@@ -40,6 +39,7 @@ class ProductListings extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            categories: [],
             products: []
         }
     }
@@ -54,12 +54,12 @@ class ProductListings extends Component {
 
     componentDidMount() {
         this.getProducts()
+
+    
     }
 
     render() {
-        var {
-            products
-        } = this.state;
+        var {products} = this.state;
         return (
 
         <div className="Item carousel-container">

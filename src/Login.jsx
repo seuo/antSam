@@ -1,17 +1,13 @@
 import React, {Component} from 'react';
 import {navigate} from '@reach/router'
-import {authenticate} from './API';
+import {api} from './API';
 import {
   Col,
   Accordion,
   Card,
   Button,
   Form,
-  Nav,
-  Navbar,
-  Image,
-  FormControl,
-  InputGroup
+
 } from 'react-bootstrap';
 
 class Login extends Component {
@@ -19,37 +15,49 @@ class Login extends Component {
   constructor(props){
     super(props);
     this.state = {
-      message:''
+        currentUser: null
     }
+    
+  }
+  handleSubmitForm=(e)=>{
+    e.preventDefault()
+    var form = new FormData(this.form);
+    var data = {
+        name: form.get("name-input"),
+        username: form.get("userName-input"),
+        password: form.get("password-input"),
+        email: form.get("email-input"),
+
+    }
+    api.addUser(data).then(res => {
+        var user = res.data
+
+        var data = {
+            username: user.username,
+            password: user.password,
+        }
+
+        api.authenticate(data).then(res =>{
+            this.props.updateCurrentUser(res.data)
+        })
+      })
   }
   
-  // handleFormSubmit = (e) => {
-  //   e.preventDefault();
-
-  //   var formData = new FormData(this.form);
-  //   var data = {
-  //     username:formData.get('username-input'),
-  //     password:formData.get('password-input'),
-  //   }
-
-  //   var {setCurrentUser} = this.props
-
-  //   authenticate(data)
-  //   .then(res => {
-  //     var user = res.data
-  //     setCurrentUser(user)
-  //     return user
-  //   })
-  //   .then(user => {
-  //     if(user){
-  //       localStorage.setItem('userId',user.id)
-  //       navigate('/home')
-  //     }else{
-  //       this.setState({message:'Try again'})
-  //     }
-  //   })
-
-  // }
+  handleSubmitLogin=(e)=>{
+    e.preventDefault()
+    var form = new FormData(this.loginForm);
+    var data = {
+        username: form.get("userName-input"),
+        password: form.get("password-input"),
+    }
+    api.authenticate(data).then(res =>{
+        this.props.updateCurrentUser(res.data)
+    })
+  }
+  
+ 
+  
+  
 
   render(){
     return (
@@ -61,7 +69,7 @@ class Login extends Component {
               </Accordion.Toggle>
           </Card.Header>
           <Accordion.Collapse eventKey="0">
-              <Form className="loginForm" onSubmit={this.handleFormSubmit} ref={(el) => {this.form = el}}>
+              <Form className="loginForm" onSubmit={this.handleSubmitLogin} ref={(el) => {this.loginForm = el}} >
 
                   <Form.Group controlId="formBasicEmail">
                       <Form.Control type="text" className="form-control" name="username-input" id="username-input" placeholder="Username"/>
@@ -74,7 +82,7 @@ class Login extends Component {
                   <Button variant="primary" type="submit">
                       Login
                   </Button>
-                  <p>{this.state.message}</p>
+                  <p></p>
               </Form>
           </Accordion.Collapse>
       </Card>
@@ -85,34 +93,30 @@ class Login extends Component {
               </Accordion.Toggle>
           </Card.Header>
           <Accordion.Collapse eventKey="1">
-              <Form className="loginForm">
+              <Form className="loginForm" onSubmit={this.handleSubmitForm} ref={(el) => {this.form = el}} >
 
+              <Form.Group  controlId="formGridName">
+
+                <Form.Control type="text" placeholder="Name" name="name-input"/>
+                </Form.Group>
                   <Form.Row>
-                      <Form.Group as={Col} controlId="formGridEmail">
+                    
+                      <Form.Group as={Col} controlId="formGridUsername">
 
-                          <Form.Control type="email" placeholder="Enter email"/>
+                          <Form.Control type="text" placeholder="Username" name="userName-input"/>
                       </Form.Group>
 
                       <Form.Group as={Col} controlId="formGridPassword">
 
-                          <Form.Control type="password" placeholder="Password"/>
+                          <Form.Control type="password" placeholder="Password" name="password-input"/>
                       </Form.Group>
                   </Form.Row>
 
-                  <Form.Group controlId="formGridAddress1">
+                  <Form.Group controlId="formGridEmail">
 
-                      <Form.Control placeholder="Street Address"/>
+                      <Form.Control type="email" placeholder="Email" name="email-input"/>
                   </Form.Group>
 
-                  <Form.Group controlId="formGridAddress2">
-
-                      <Form.Control placeholder="Apartment, studio, or floor"/>
-                  </Form.Group>
-
-                  <Form.Group controlId="formGridCity">
-
-                      <Form.Control placeholder="City"/>
-                  </Form.Group>
 
                   <Button variant="primary" type="submit">
                       Register

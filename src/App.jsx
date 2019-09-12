@@ -6,6 +6,7 @@ import Products from './Products';
 import AddProduct from './AddProduct';
 import EditProduct from './EditProduct';
 import Login from './Login';
+import RouteCat from './RouteCategory'
 import Product from './Product';
 import RouteProductDetails from './RouteProductDetails';
 import {
@@ -26,7 +27,7 @@ import Modal from 'react-awesome-modal';
 import 'react-multi-carousel/lib/styles.css';
 
 import './App.css';
-import api from './API'
+import {api} from './API';
 
 
 class App extends Component{
@@ -34,6 +35,7 @@ class App extends Component{
   super(props)
     this.state = {
       visible: false,
+      categories: [],
       currentUser:{},
     }
   }
@@ -49,10 +51,15 @@ closeModal() {
 handleLogOut=()=>{
 
 }
+updateCurrentUser=(user)=>{
+    this.setState({currentUser:user})
+}
 componentDidMount=()=>{
-
+    api.
+    getCategories().then(res => this.setState({categories:res.data}))
 }
   render(){
+    var {categories} = this.state;
     return(
 
 
@@ -160,22 +167,14 @@ componentDidMount=()=>{
                       </Card.Header>
                       <Accordion.Collapse eventKey="0">
                           <Nav variant="pills" defaultActiveKey="/home">
-                              <Nav.Item>
-                                  <Nav.Link eventKey="cat-1">Suits</Nav.Link>
-                              </Nav.Item>
-                              <Nav.Item>
-                                  <Nav.Link eventKey="cat-2">Footwear</Nav.Link>
-                              </Nav.Item>
-                              <Nav.Item>
-                                  <Nav.Link eventKey="cat-3">Clothing</Nav.Link>
-                              </Nav.Item>
-                              <Nav.Item>
-                                  <Nav.Link eventKey="cat-4">Accessories</Nav.Link>
-                              </Nav.Item>
+                          {
+                                categories.map(categories =>  <Link to={'/categories/'+categories.id}>{categories.name}</Link>)
+                            }
                           </Nav>
                       </Accordion.Collapse>
                   </Card>
               </Accordion>
+
           </div>
          
       
@@ -184,6 +183,7 @@ componentDidMount=()=>{
             <Products path="/products"/>
             <AddProduct path="/products/new"/>
             <EditProduct path="/products/:id/edit"/>
+            <RouteCat path="/categories"/>
             {/* <RouteProductDetails path="/detail/:id"/> */}
             <RouteProductDetails path="/products/:id"/>
           </Router>
