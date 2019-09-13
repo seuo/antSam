@@ -45,17 +45,13 @@ class ProductListings extends Component {
     }
 
     getProducts = () => {
-        api
-            .getProducts()
-            .then(res => {
-                this.setState({products: res.data})
-            })
-    }
+        api.getProducts().then(res => {
+          this.setState({products: res.data})
+        })
+      }
 
     componentDidMount() {
         this.getProducts()
-
-    
     }
 
     render() {
@@ -186,12 +182,12 @@ class ProductListings extends Component {
                     <Row className="productsListing">
                     {
                         products.map((item) => {
-                            var props = {
+                            var itemProps = {
                                 ...item,
                                 key: item.id,
                                 refreshData: this.getProducts
                             }
-                            return <Item {...props}/>
+                            return <Item {...itemProps}/>
 
                         })
                     }

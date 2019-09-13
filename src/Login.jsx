@@ -15,7 +15,8 @@ class Login extends Component {
   constructor(props){
     super(props);
     this.state = {
-        currentUser: null
+        text:'',
+       
     }
     
   }
@@ -47,12 +48,26 @@ class Login extends Component {
     e.preventDefault()
     var form = new FormData(this.loginForm);
     var data = {
-        username: form.get("userName-input"),
+        username: form.get("username-input"),
         password: form.get("password-input"),
     }
+
+    this.loginForm.reset()
     api.authenticate(data).then(res =>{
-        this.props.updateCurrentUser(res.data)
+        var user = res.data
+        this.props.updateCurrentUser(user)
+    
+        return user
     })
+    .then(user => {
+        if(user){
+            localStorage.setItem('userID',user.id)
+            this.props.closeModal()
+        }else{
+            this.setState({text:'incorrect username or password, please try again'})
+        }
+    })
+   
   }
   
  
@@ -72,13 +87,14 @@ class Login extends Component {
               <Form className="loginForm" onSubmit={this.handleSubmitLogin} ref={(el) => {this.loginForm = el}} >
 
                   <Form.Group controlId="formBasicEmail">
-                      <Form.Control type="text" className="form-control" name="username-input" id="username-input" placeholder="Username"/>
+                      <Form.Control type="text" className="form-control" name="username-input" id="username-input" placeholder="Username" />
                       <Form.Text className="text-muted"></Form.Text>
                   </Form.Group>
 
                   <Form.Group controlId="formBasicPassword">
                       <Form.Control type="password" className="form-control" name="password-input" id="password-input" placeholder="Password"/>
                   </Form.Group>
+                  <p>{this.state.text}</p>
                   <Button variant="primary" type="submit">
                       Login
                   </Button>
