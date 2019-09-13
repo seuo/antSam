@@ -10,7 +10,36 @@
 }
 
 
-
+.catSelect {
+    .form-control:focus {
+        color: #495057;
+        background-color: #fff;
+        border-color: $color-5;
+        border:none;
+        border-bottom:thin solid $color-5;
+        border-radius: 0;
+        outline: 0;
+        box-shadow: 0 0 0 0rem $color-5;
+        font-size:1em;
+    }
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    select {
+        width:50%;
+        option {
+            font-size:1em;
+        }
+    }
+}
+#cat-input {
+    width:50%;
+    option {
+        font-size:1em;
+        display: flex;
+    }
+}
 
 .listProduct {
         justify-content: center;

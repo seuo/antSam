@@ -35,6 +35,54 @@ a {
   width: 100%;
 }
 
+.catSelect {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.catSelect .form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #3f3f3f;
+  border: none;
+  border-bottom: thin solid #3f3f3f;
+  border-radius: 0;
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0rem #3f3f3f;
+          box-shadow: 0 0 0 0rem #3f3f3f;
+  font-size: 1em;
+}
+
+.catSelect select {
+  width: 50%;
+}
+
+.catSelect select option {
+  font-size: 1em;
+}
+
+#cat-input {
+  width: 50%;
+}
+
+#cat-input option {
+  font-size: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .listProduct {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
