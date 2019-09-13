@@ -160,9 +160,9 @@ componentDidMount=()=>{
                           </Accordion.Toggle>
                       </Card.Header>
                       <Accordion.Collapse eventKey="0">
-                          <Nav variant="pills" defaultActiveKey="/home">
+                          <Nav className="browseNav" variant="pills" defaultActiveKey="/home">
                             {
-                                categories.map(categories =>  <Link to={'/categories/'+categories.id}>{categories.name}</Link>)
+                                categories.map(categories =>  <Link className="browseNavButton" to={'/categories/'+categories.id}>{categories.name}</Link>)
                             }
                           </Nav>
                       </Accordion.Collapse>

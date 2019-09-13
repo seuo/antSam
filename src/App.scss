@@ -40,6 +40,7 @@ a {
 
 
 @import "_products.scss";
+@import "_productListings.scss";
 @import "_userAdmin.scss";
 @import "_review.scss";
 @import "_imageGrid.scss";
@@ -210,7 +211,6 @@ a {
         flex-direction: column;
 
         .nav.nav-pills {
-            justify-content: center;
             padding-top: 0em;
             border-radius:0;
             font-size:.95em;

@@ -30,9 +30,7 @@ class Item extends Component{
         <Card>
         <Link to={'/products/'+id}><Card.Img variant="top" src={server+photo}/></Link>
             <Card.Body>
-                <Card.Title><Link to={'/products/'+id}>{name}</Link><Button variant="outline-dark">
-                        
-                    </Button>
+                <Card.Title><Link to={'/products/'+id}>{name}</Link>
                 </Card.Title>
 
             </Card.Body>

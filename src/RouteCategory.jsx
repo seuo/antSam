@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Product from './Product';
+import Item from './Item';
 import {api, server} from './API';
 import {
     Container,
@@ -39,24 +39,23 @@ class RouteCat extends Component {
         var {category} = this.state
         
         return category ? (
-            <Container>
-                <Row>
-                    <Col>
-                    <h5>{category.name}</h5>
+            <Container className="categoryContainer">
+                <Row className="productsListing">
+                    
                     {
-                        category.products.map((product) => {
-                            var productProps = {
-                                ...product,
-                                key:product.id,
+                        category.products.map((item) => {
+                            var itemProps = {
+                                ...item,
+                                key:item.id,
                                 refreshData:() => this.routeGetCat(category.id)
                             };
                             return (
-                                <Product {...productProps} />
+                                <Item {...itemProps} />
                             )
                         })
                     }
                     
-                    </Col>
+                    
                 </Row>
             </Container>
         ) : null
