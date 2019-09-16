@@ -42,7 +42,7 @@ class RouteProductDetails extends Component{
     })
   }
   render(){
-    var {product} = this.state;
+    var {product,currentUser} = this.state;
 
 
 
@@ -65,7 +65,7 @@ class RouteProductDetails extends Component{
           product.reviews.map(review => {
             var reviewProps = {
               review:review,
-              // currentUser:currentUser,
+              currentUser:currentUser,
               refreshData: () => this.routeGetProduct(product.id)
             }
             return <Review {...reviewProps} />
@@ -97,9 +97,9 @@ class RouteProductDetails extends Component{
 
       <Form className="reviewForm addReview" onSubmit={this.handleReviewFormSubmit} ref={(el) => {this.reviewForm = el}}>
 		<h3>Add a Review</h3>
-		<Form.Group controlId="formGridDescription">
+		{/* <Form.Group controlId="formGridDescription">
 			<Form.Control type="text" placeholder="Description"/>
-		</Form.Group>
+		</Form.Group> */}
 		<Form.Group controlId="formGridComment">
       <Form.Label>Comment:</Form.Label>
 			<Form.Control type="text" className="form-control" name="comment-input" id="comment-input" placeholder="Enter Comment"/>

@@ -40,6 +40,9 @@ class Login extends Component {
 
         api.authenticate(data).then(res =>{
             this.props.updateCurrentUser(res.data)
+            localStorage.setItem('userID',user.id)
+            this.props.closeModal()
+            window.location.reload();
         })
       })
   }

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import {Router, Link, navigate} from '@reach/router';
+import {Router, Link, Redirect, navigate} from '@reach/router';
 import ProductListings from './ProductListings';
 import Products from './Products';
 import AddProduct from './AddProduct';
@@ -8,7 +8,9 @@ import EditProduct from './EditProduct';
 import Login from './Login';
 import RouteCat from './RouteCategory'
 import Product from './Product';
+import PurchaseProductDetail from './PurchaseProductDetail';
 import RouteProductDetails from './RouteProductDetails';
+import PurchaseProductListings from './PurchaseProductListings';
 import {
   Accordion,
   Card,
@@ -26,8 +28,11 @@ import './App.css';
 import Modal from 'react-awesome-modal';
 import 'react-multi-carousel/lib/styles.css';
 
+
 import './App.css';
 import {api} from './API';
+
+//delete incoming change
 
 
 class App extends Component{
@@ -51,19 +56,22 @@ closeModal = () => {
 handleLogOut=()=>{
     localStorage.removeItem('userID')
     this.setState({currentUser:null})
+    window.location.reload();
+
 }
+
 updateCurrentUser=(user)=>{
     this.setState({currentUser:user})
 }
 componentDidMount=()=>{
-    api.
-    getCategories().then(res => this.setState({categories:res.data}))
+    api.getCategories().then(res => this.setState({categories:res.data}))
 
     var userLocal = localStorage.getItem('userID')
     
     if(userLocal){
         api.getUser(userLocal).then(res=>this.setState({currentUser:res.data}))
     }
+    console.log(localStorage)
 }
   render(){
     var {categories} = this.state;
@@ -142,6 +150,7 @@ componentDidMount=()=>{
                                 <Nav.Link href="/products">My Products</Nav.Link>
                                 <Nav.Link href="#watchlist">Watch List</Nav.Link>
                                 <Nav.Link href="/my-reviews">My Reviews</Nav.Link>
+                                <Nav.Link href="/purchases">Purchase Products</Nav.Link>
                               </Nav>
                           </Navbar.Collapse>
                           </>
@@ -180,6 +189,7 @@ componentDidMount=()=>{
             <RouteCat path="/categories/:id"/>
             {/* <RouteProductDetails path="/detail/:id"/> */}
             <RouteProductDetails path="/products/:id"/>
+            <PurchaseProductListings path="/purchases"/>
           </Router>
  
           </div>

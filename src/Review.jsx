@@ -25,7 +25,7 @@ class Review extends Component {
             review,
             currentUser
         } = this.props
-
+        console.log(review)
         return (
 
 	<Form className="reviewForm">

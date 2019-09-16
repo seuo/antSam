@@ -36,7 +36,35 @@ a {
 .linkColor {
     color:$link-color;
 }
+// ====for purchase products ====
+.media
+{
+    .price
+    {
+        font-weight:700;
+    }
+    .btn-primary 
+    {
+        background-color:#3f3f3f;
+        border-color:#3f3f3f;
+        color:#bfbfbf;
 
+        a 
+        {
+            color:#bfbfbf;
+        }
+    }
+    
+}
+.line
+    {
+        // position: relative;
+        // display: block;
+        padding: .75rem 1.25rem;
+        margin-bottom: -1px;
+        background-color: #fff;
+        border-bottom: 1px solid rgba(0,0,0,.125);
+    }
 
 
 @import "_products.scss";

@@ -59,7 +59,7 @@
     justify-content: space-between;
     .browseNavButton {
         padding:.5em;
-
+        text-transform: capitalize;
     }
     a:hover {
         color: $color-5;

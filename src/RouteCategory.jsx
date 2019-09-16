@@ -18,8 +18,7 @@ class RouteCat extends Component {
 
 
     routeGetCat = (id) => {
-        api
-        .getCategory(id).then(res => this.setState({category:res.data}))
+        api.getCategory(id).then(res => this.setState({category:res.data}))
     }
 
     componentDidMount(){

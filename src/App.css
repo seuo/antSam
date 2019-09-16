@@ -27,6 +27,27 @@ a {
   color: #A68B3C;
 }
 
+.media .price {
+  font-weight: 700;
+}
+
+.media .btn-primary {
+  background-color: #3f3f3f;
+  border-color: #3f3f3f;
+  color: #bfbfbf;
+}
+
+.media .btn-primary a {
+  color: #bfbfbf;
+}
+
+.line {
+  padding: .75rem 1.25rem;
+  margin-bottom: -1px;
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
 .form-group .btn-primary {
   font-size: .9em;
 }
@@ -303,6 +324,7 @@ a {
 
 .browseNav .browseNavButton {
   padding: .5em;
+  text-transform: capitalize;
 }
 
 .browseNav a:hover {
