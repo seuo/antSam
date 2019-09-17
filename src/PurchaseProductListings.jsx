@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PurchaseProductDetail from './PurchaseProductDetail';
-import {Router, Redirect, Link, navigate} from '@reach/router';
+import {Router, Link, navigate} from '@reach/router';
 import {api} from './API';
 import {
   Card,
@@ -20,16 +20,20 @@ class PurchaseProductListings extends Component{
   }
 
   componentDidMount=()=>{
+    
     var userID = localStorage.getItem('userID')
+    
     api.getUser(userID).then(res =>{
-    var gotUser = res.data
-    this.setState({user:gotUser})
-    })
-  }
-
+      var user = res.data
+      this.setState({user})
+      
+  })
+  
+}
   render(){
+   
     var products = this.state.user.purchases;
-    // console.log(products)
+    
     return products ? (
       
       <div className="listings">
@@ -50,7 +54,7 @@ class PurchaseProductListings extends Component{
         
       </div>
 
-    ):<></>;
+    ):null;
   }
 
 

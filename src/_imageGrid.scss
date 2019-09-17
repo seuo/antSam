@@ -6,6 +6,9 @@
     .jumbotron-fluid {
         padding:0;
         margin-bottom:0;
+        a.ourStoreLink.nav-link {
+            padding: 0;
+        }
         .container {
             padding:1em;
             color:$color-0;

@@ -1,10 +1,11 @@
 import axios from 'axios';
 
 // var url = 'http://10.2.24.12:4001/api';
-// var server = 'http://10.2.24.12:4001/home';
+// var server = 'http://10.2.24.12:4001/home/';
 
 var url = 'http://localhost:4001/api';
-var server = 'http://localhost:4001/home';
+var server = 'http://localhost:4001/';
+
 
 var api = {
 
@@ -20,14 +21,6 @@ var api = {
     deleteProduct : (id) => {
         return axios.delete(url+'/products/'+id)
     },
-
-    getCategories : () => {
-        return axios.get(url+'/categories')
-    },
-
-    getCategory : (id) => {
-        return axios.get(url+'/categories/'+id)
-    },
     
     getProducts : () => {
         return axios.get(url+'/products')
@@ -37,15 +30,32 @@ var api = {
         return axios.get(url+'/products/'+id)
     },
     
+    getCategories : () => {
+        return axios.get(url+'/categories')
+    },
+
+    getCategory : (id) => {
+        return axios.get(url+'/categories/'+id)
+    },
+    
+    // getCategoryName : (name) => {
+    //     return axios.get(url+'/categories/'+name)
+    // },
+    
     uploadPhoto : (data) => {
         return axios.post(url+'/upload',data)
+    },
+
+    authenticate : (data) => {
+        return axios.post(url+'/authenticate',data)
     },
 
     getUser : (id) => {
         return axios.get(url+'/users/'+id)
     },
-
-
+    addUser: (data) => {
+       return axios.post(url+'/users/',data)
+    },
 
     addReview : (data) => {
         return axios.post(url+'/reviews',data)
@@ -59,24 +69,10 @@ var api = {
         return axios.delete(url+'/reviews/'+id)
     },
     
-    uploadPhoto : (data) => {
-        return axios.post(url+'/upload',data)
-    },
-
-    authenticate : (data) => {
-        return axios.post(url+'/authenticate',data)
-    },
-   
-    // authenticate : (data) => {
-    //     return axios.post(url+'/user',data)
-    // },
-
-    addUser: (data) => {
-       return axios.post(url+'/users/',data)
-    },
-
-
-
 }
+
+
+
+
 
 export {server, api}

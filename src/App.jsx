@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import {Router, Link, Redirect, navigate} from '@reach/router';
+import {Router, Link, navigate} from '@reach/router';
 import ProductListings from './ProductListings';
 import Products from './Products';
 import AddProduct from './AddProduct';
 import EditProduct from './EditProduct';
 import Login from './Login';
-import RouteCat from './RouteCategory'
 import Product from './Product';
 import PurchaseProductDetail from './PurchaseProductDetail';
 import RouteProductDetails from './RouteProductDetails';
 import PurchaseProductListings from './PurchaseProductListings';
+import RouteCat from './RouteCategory';
 import {
   Accordion,
   Card,
@@ -27,12 +27,8 @@ import {
 import './App.css';
 import Modal from 'react-awesome-modal';
 import 'react-multi-carousel/lib/styles.css';
-
-
-import './App.css';
+import './App.scss';
 import {api} from './API';
-
-//delete incoming change
 
 
 class App extends Component{
@@ -45,7 +41,7 @@ class App extends Component{
     }
   }
 
-  openModal = () => {
+openModal = () => {
     this.setState({visible: true});
 }
 
@@ -56,14 +52,12 @@ closeModal = () => {
 handleLogOut=()=>{
     localStorage.removeItem('userID')
     this.setState({currentUser:null})
-    window.location.reload();
-
 }
-
 updateCurrentUser=(user)=>{
     this.setState({currentUser:user})
 }
-componentDidMount=()=>{
+componentDidMount=()=>
+{
     api.getCategories().then(res => this.setState({categories:res.data}))
 
     var userLocal = localStorage.getItem('userID')
@@ -71,7 +65,7 @@ componentDidMount=()=>{
     if(userLocal){
         api.getUser(userLocal).then(res=>this.setState({currentUser:res.data}))
     }
-    console.log(localStorage)
+
 }
   render(){
     var {categories} = this.state;
@@ -94,7 +88,7 @@ componentDidMount=()=>{
                       <i className="far fa-window-close"></i>
                   </a>
               </span>
-            <Login closeModal={this.closeModal} updateCurrentUser={this.updateCurrentUser}/>
+          <Login closeModal={this.closeModal} updateCurrentUser={this.updateCurrentUser}/>
 
           </div>
       </Modal>
@@ -103,13 +97,13 @@ componentDidMount=()=>{
       {/* {
     currentUser? (<span>Welcome {currentUser.name}</span>) : null
   } */}
-            <Navbar
+          <Navbar
               className="Navbar"
               collapseOnSelect="collapseOnSelect"
               expand="lg"
               bg="dark"
               variant="dark">
-              <Link to="/home"><Image className="Logo" src={require('./logo.png')} fluid="fluid"/></Link>
+              <Link to="/"><Image className="Logo" src={require('./logo.png')} fluid="fluid"/></Link>
               <div className="navBarbot">
                   <InputGroup className="searchBar">
                       <InputGroup.Append>
@@ -122,6 +116,7 @@ componentDidMount=()=>{
                           aria-label="Search"
                           aria-describedby="basic-addon2"/>
                        </InputGroup>
+
                        {
                            this.state.currentUser ? <> <input
                             className="loginButton"
@@ -136,6 +131,7 @@ componentDidMount=()=>{
                             onClick={() => this.openModal()}/>
                        
                         </>}
+
                      
                       {
                           this.state.currentUser ? (
@@ -145,12 +141,12 @@ componentDidMount=()=>{
 
                           <Navbar.Collapse id="responsive-navbar-nav">
                               <Nav className="mr-auto">
-                                <Nav.Link href="/products/new">+ Sell an Item</Nav.Link>
-                                <Nav.Link href="/user-profile">User Profile</Nav.Link>
-                                <Nav.Link href="/products">My Products</Nav.Link>
-                                <Nav.Link href="#watchlist">Watch List</Nav.Link>
-                                <Nav.Link href="/my-reviews">My Reviews</Nav.Link>
-                                <Nav.Link href="/purchases">Purchase Products</Nav.Link>
+                              <Nav.Link href="/products/new">+ Sell an Item</Nav.Link>
+                              <Nav.Link href="/user-profile">User Profile</Nav.Link>
+                              <Nav.Link href="/products">My Products</Nav.Link>
+                              <Nav.Link href="#watchlist">Watch List</Nav.Link>
+                              <Nav.Link href="/my-reviews">My Reviews</Nav.Link>
+                              <Nav.Link href="/purchases">Purchase Products</Nav.Link>
                               </Nav>
                           </Navbar.Collapse>
                           </>
@@ -160,6 +156,7 @@ componentDidMount=()=>{
           </Navbar>
       </div>
       <div className="section">
+
           <div className="catagories">
               <Accordion className="FilterCat">
                   <Card>
@@ -169,25 +166,23 @@ componentDidMount=()=>{
                           </Accordion.Toggle>
                       </Card.Header>
                       <Accordion.Collapse eventKey="0">
-                          <Nav className="browseNav" variant="pills" defaultActiveKey="/home">
-                            {
-                                categories.map(categories =>  <Link className="browseNavButton" to={'/categories/'+categories.id}>{categories.name}</Link>)
-                            }
-                          </Nav>
+                        <Nav className="browseNav" variant="pills" defaultActiveKey="/home">
+                                {
+                                    categories.map(categories =>  <Link className="browseNavButton" to={'/categories/'+categories.name}>{categories.name}</Link>)
+                                }
+                        </Nav>
                       </Accordion.Collapse>
                   </Card>
               </Accordion>
-
           </div>
          
       
           <Router>
-            <ProductListings path="/home"/>
+            <ProductListings path="/"/>
+            <RouteCat path="/categories/:id"/>
             <Products path="/products"/>
             <AddProduct path="/products/new"/>
             <EditProduct path="/products/:id/edit"/>
-            <RouteCat path="/categories/:id"/>
-            {/* <RouteProductDetails path="/detail/:id"/> */}
             <RouteProductDetails path="/products/:id"/>
             <PurchaseProductListings path="/purchases"/>
           </Router>

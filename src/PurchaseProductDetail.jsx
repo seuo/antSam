@@ -9,7 +9,6 @@ import './App.css';
 class PurchaseProductDetail extends Component {
   constructor(props){
     super(props);
-    
   }
   // routeGetProduct = (id) => {
   //   api.getProduct(id).then(res => this.setState({product:res.data}))

@@ -46,7 +46,7 @@ class RouteCat extends Component {
                             var itemProps = {
                                 ...item,
                                 key:item.id,
-                                refreshData:() => this.routeGetCat(category.id)
+                                refreshData:() => this.routeGetCat(category.name)
                             };
                             return (
                                 <Item {...itemProps} />

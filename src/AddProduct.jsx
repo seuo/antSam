@@ -36,7 +36,7 @@ class AddProduct extends Component{
 				name: form.get('name-input'),
 				description: form.get('description-input'),
 				price: form.get('price-input'),
-				cat_id: form.get('cat-input'),
+				cat_name: form.get('cat-input'),
 				photo: file,
 
 			}
@@ -59,10 +59,10 @@ class AddProduct extends Component{
 				  <Form.Group className="catSelect" controlId="exampleForm.ControlSelect1">
 					<Form.Label>Select Category:</Form.Label>
 					<Form.Control id="cat-input" name="cat-input" as="select">
-					<option value="1">Suits</option>
-					<option value="2">Footwear</option>
-					<option value="3">Clothing</option>
-					<option value="4">Accessories</option>
+					<option value="suits">Suits</option>
+					<option value="footwear">Footwear</option>
+					<option value="clothing">Clothing</option>
+					<option value="accessories">Accessories</option>
 					</Form.Control>
 				</Form.Group>
 				<Form.Group controlId="formBnaasicName">

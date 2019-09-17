@@ -284,6 +284,10 @@ a {
         display: flex;
         justify-content: space-between;
         flex-direction: column;
+        text-align: center;
+        h3 {
+            padding-top:.5em;
+        }
     }
 
 
@@ -294,6 +298,15 @@ a {
     color:$color-3;
     font-size:.9em;
     padding:1em;
+}
+
+// misc
+
+.NoPad {
+    padding:0;
+    .container {
+        margin:0;
+    }
 }
 
 
