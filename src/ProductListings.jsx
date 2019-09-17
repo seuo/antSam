@@ -4,7 +4,7 @@ import RouteProductDetails from './RouteProductDetails';
 import {Router, Link, navigate} from '@reach/router';
 import {api} from './API';
 import Carousel from 'react-multi-carousel';
-import {Col, Card, Button, Image, Row, Jumbotron, Container} from 'react-bootstrap';
+import {Col, Nav, Card, Button, Image, Row, Jumbotron, Container} from 'react-bootstrap';
 
 import './App.css';
 
@@ -197,12 +197,12 @@ class ProductListings extends Component {
                 <Container className="imageGrid">
                     <Row>
                             <Jumbotron fluid="fluid">
-                                <Container>
-                                    <h1>Our Store</h1>
+                            <Nav.Link className="ourStoreLink" href="/ourstore"><Container>
+                                <h1>Our Store</h1>
                                     <p>
                                         We stock a huge range of new & second trade in's. We check the listing matches the product for quality assurance.
                                     </p>
-                                </Container>
+                                </Container></Nav.Link>
                             </Jumbotron>
 
                     </Row>
