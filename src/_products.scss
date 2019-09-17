@@ -95,10 +95,32 @@ padding-top: 1em;
         padding:1em 0 0 0;
         .card-title {
             display:flex;
-            justify-content:center;
+            justify-content:space-around;
             align-items: center;
             padding:0;
         }
+        .card-text {
+            // text-align:center;
+            display:flex;
+            align-items: center;
+            justify-content:space-around;
+
+        }
+        .productPrice {
+            display:flex;
+            align-items: center;
+            justify-content:space-around;
+            padding-bottom:1em;
+            button {
+                padding: 0em 1em;
+                border:none;
+                border-radius:.1em;
+                color:$link-color;
+                background-color:$color-0;
+            }
+
+        }
+
     }
     .AddButton {
         display: flex;

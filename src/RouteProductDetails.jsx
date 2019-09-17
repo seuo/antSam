@@ -20,9 +20,10 @@ class RouteProductDetails extends Component{
 
   componentDidMount(){
     var {id} = this.props
-    //console.log(id);
+    // console.log(id);
     this.routeGetProduct(id)
   }
+
   handleReviewFormSubmit = (e) => {
     e.preventDefault();
 
@@ -41,12 +42,24 @@ class RouteProductDetails extends Component{
       this.routeGetProduct(productId)
     })
   }
+
+  handlePurchase = (e) => {
+    e.preventDefault();
+
+    var user_id = localStorage.getItem('userID')
+
+    var data = {
+      purchaser_id:user_id,
+    }
+    var {id} = this.props;
+    api.updateProducts(id,data)
+    // this.props.openModal()
+  }
+
+
+
   render(){
     var {product,currentUser} = this.state;
-
-
-
-
 
     return product ? (
       <>
@@ -84,7 +97,7 @@ class RouteProductDetails extends Component{
             </Card.Title>
             <Card.Img variant="top" src={server+product.photo}/>
             <Card.Text>{product.description}</Card.Text>
-            <Card.Text>${product.price}</Card.Text>
+            <Card.Text className="productPrice">${product.price}<Form className="purchaseForm" onSubmit={this.handlePurchase} ref={(el) => {this.form = el}} ><Button type="submit" className="purchaseButton" name="purchase" variant="outline-dark">Purchase</Button></Form></Card.Text>
 
                 {/* <ListGroup.Item className="edit"><Link to={'/products/'+id+'/edit'}>Edit Listing</Link></ListGroup.Item>
                 <ListGroup.Item onClick={this.deleteProduct} className="delete linkColor">Remove Listing</ListGroup.Item> */}

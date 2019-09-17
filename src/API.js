@@ -17,6 +17,10 @@ var api = {
     updateProduct : (id,data) => {
         return axios.get(url+'/products/'+id,data)
     },
+
+    updateProducts : (id,data) => {
+        return axios.put(url+'/products/'+id,data)
+    },
     
     deleteProduct : (id) => {
         return axios.delete(url+'/products/'+id)
