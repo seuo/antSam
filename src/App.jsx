@@ -11,6 +11,7 @@ import Product from './Product';
 import PurchaseProductDetail from './PurchaseProductDetail';
 import RouteProductDetails from './RouteProductDetails';
 import PurchaseProductListings from './PurchaseProductListings';
+import OutStore from './OurStore';
 import {
   Accordion,
   Card,
@@ -190,6 +191,7 @@ componentDidMount=()=>{
             {/* <RouteProductDetails path="/detail/:id"/> */}
             <RouteProductDetails path="/products/:id"/>
             <PurchaseProductListings path="/purchases"/>
+            <OutStore path ="/ourstore"/>
           </Router>
  
           </div>

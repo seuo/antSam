@@ -552,6 +552,10 @@ a {
   margin-bottom: 0;
 }
 
+.imageGrid .jumbotron-fluid a.ourStoreLink.nav-link {
+  padding: 0;
+}
+
 .imageGrid .jumbotron-fluid .container {
   padding: 1em;
   color: #fcfcfc;
@@ -853,6 +857,11 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  text-align: center;
+}
+
+.section .container h3 {
+  padding-top: .5em;
 }
 
 .footer {
@@ -860,6 +869,14 @@ a {
   color: #8c8c8c;
   font-size: .9em;
   padding: 1em;
+}
+
+.NoPad {
+  padding: 0;
+}
+
+.NoPad .container {
+  margin: 0;
 }
 
 @media (min-width: 576px) {
