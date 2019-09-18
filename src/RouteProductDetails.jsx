@@ -4,6 +4,9 @@ import Review from './Review';
 import {Link} from '@reach/router';
 import {Form,Button,ToggleButtonGroup,ToggleButton,Card,ListGroup} from 'react-bootstrap';
 import {api, server} from './API';
+import Modal from 'react-awesome-modal';
+import Login from './Login';
+
 
 import './App.css';
 
@@ -13,8 +16,18 @@ class RouteProductDetails extends Component{
     this.state = {
       product:null,
       currentUser:{},
+      visible: false,
     }
   }
+
+  openModal = () => {
+    this.setState({visible: true});
+  }
+
+  closeModal = () => {
+      this.setState({visible: false});
+  }
+
   routeGetProduct = (id) => {
     api.getProduct(id).then(res => this.setState({product:res.data}))
   }
@@ -23,6 +36,7 @@ class RouteProductDetails extends Component{
     var {id} = this.props
     //console.log(id);
     this.routeGetProduct(id)
+
   }
   handleReviewFormSubmit = (e) => {
     e.preventDefault();
@@ -67,7 +81,7 @@ class RouteProductDetails extends Component{
   
   render(){
     var {product,currentUser} = this.state;
-
+    var user_id = localStorage.getItem('userID')
 
 
 
@@ -97,27 +111,57 @@ class RouteProductDetails extends Component{
         }
       {/* </div>  */}
 
-<div className="Item">
-    <Card
-        style={{
-            width: '18rem'
-        }}>
-       
-        <Card.Body>
-            <Card.Title>{product.name}
-            </Card.Title>
-            <Card.Img variant="top" src={server+product.photo}/>
-            <Card.Text>{product.description}</Card.Text>
-            <Card.Text className="productPrice">${product.price}<Form className="purchaseForm" onSubmit={this.handlePurchase} ref={(el) => {this.form = el}} ><Button type="submit" className="purchaseButton" name="purchase" variant="outline-dark">Purchase</Button></Form></Card.Text>
 
-                {/* <ListGroup.Item className="edit"><Link to={'/products/'+id+'/edit'}>Edit Listing</Link></ListGroup.Item>
-                <ListGroup.Item onClick={this.deleteProduct} className="delete linkColor">Remove Listing</ListGroup.Item> */}
+      <Modal
+          visible={this.state.visible}
+          width="95%"
+          height="80%"
+          effect="fadeInUp"
+          onClickAway={() => this.closeModal()}>
+          <div className="loginModal">
 
-        </Card.Body>
-    </Card>
-  </div>
+              <span>
+                  <h6>Login or Register to buy & sell</h6>
+                  <a href="javascript:void(0);" onClick={() => this.closeModal()}>
+                      <i className="far fa-window-close"></i>
+                  </a>
+              </span>
+          <Login closeModal={this.closeModal} updateCurrentUser={this.updateCurrentUser}/>
 
+          </div>
+      </Modal>
+
+
+      <div className="Item">
+          <Card
+              style={{
+                  width: '18rem'
+              }}>
+            
+              <Card.Body>
+                  <Card.Title>{product.name}
+                  </Card.Title>
+                  <Card.Img variant="top" src={server+product.photo}/>
+                  <Card.Text>{product.description}</Card.Text>
       
+                  <Card.Text className="productPrice">${product.price}           
+                    {
+                                user_id ? (
+                                <>
+                                <Form className="purchaseForm" onSubmit={this.handlePurchase} ref={(el) => {this.form = el}} ><Button type="submit" className="purchaseButton" name="purchase" variant="outline-dark">Purchase</Button></Form>
+                                </>
+                                ) : <><Button onClick={() => this.openModal()} className="purchaseButton" name="purchase" variant="outline-dark">Purchase</Button></>
+                    }
+                  </Card.Text>
+
+                      {/* <ListGroup.Item className="edit"><Link to={'/products/'+id+'/edit'}>Edit Listing</Link></ListGroup.Item>
+                      <ListGroup.Item onClick={this.deleteProduct} className="delete linkColor">Remove Listing</ListGroup.Item> */}
+
+              </Card.Body>
+          </Card>
+        </div>
+
+
 
       <Form className="reviewForm addReview" onSubmit={this.handleReviewFormSubmit} ref={(el) => {this.reviewForm = el}}>
 		<h3>Add a Review</h3>
