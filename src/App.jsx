@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Router, Link, navigate} from '@reach/router';
+import { Route, Switch } from "react-router";
+
 import ProductListings from './ProductListings';
 import Products from './Products';
 import AddProduct from './AddProduct';
@@ -12,6 +14,8 @@ import PurchaseProductDetail from './PurchaseProductDetail';
 import RouteProductDetails from './RouteProductDetails';
 import PurchaseProductListings from './PurchaseProductListings';
 import RouteCat from './RouteCategory';
+
+
 import {
   Accordion,
   Card,
@@ -178,9 +182,7 @@ componentDidMount=()=>
                   </Card>
               </Accordion>
           </div>
-         
-      
-          <Router>
+          <Router>    
             <ProductListings path="/"/>
             <RouteCat path="/categories/:id"/>
             <Products path="/products"/>

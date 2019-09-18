@@ -15,7 +15,10 @@
     "react-dom": "^16.9.0",
     "react-multi-carousel": "^2.2.5",
     "react-responsive-modal": "^4.0.1",
+    "react-router": "^5.0.1",
     "react-router-bootstrap": "^0.25.0",
+    "react-router-dom": "^5.0.1",
+    "react-router-redirect": "^1.0.1",
     "react-scripts": "3.1.1",
     "sass-google-fonts": "^1.0.1"
   },

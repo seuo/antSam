@@ -5,6 +5,7 @@ import {Router, Link, navigate} from '@reach/router';
 import {api} from './API';
 import Carousel from 'react-multi-carousel';
 import {Col, Card, Button, Image, Row, Jumbotron, Container} from 'react-bootstrap';
+import {push} from 'react-router-redirect';
 
 import './App.css';
 
@@ -39,7 +40,7 @@ class ProductListings extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            products: []
+            products: [],
         }
     }
 
@@ -56,9 +57,11 @@ class ProductListings extends Component {
     }
 
     render() {
-        var {
-            products
-        } = this.state;
+        // var {products} = this.state;
+
+        let activeProducts = this.state.products.filter(product => product.purchaser_id == null);
+
+
         return (
 
             <div className="Item carousel-container">
@@ -182,7 +185,9 @@ class ProductListings extends Component {
             <Container>
                     <Row className="productsListing">
                     {
-                        products.map((item) => {
+
+                        
+                            activeProducts.map((item) => {
                             var itemProps = {
                                 ...item,
                                 key: item.id,

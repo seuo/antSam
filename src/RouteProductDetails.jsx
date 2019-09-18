@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 // import {Link, navigate} from '@reach/router';
 import Review from './Review';
-import {Link} from '@reach/router';
+import {Router, Link, navigate} from '@reach/router';
 import {Form,Button,ToggleButtonGroup,ToggleButton,Card,ListGroup} from 'react-bootstrap';
 import {api, server} from './API';
 import Modal from 'react-awesome-modal';
@@ -9,6 +9,7 @@ import Login from './Login';
 
 
 import './App.css';
+import ProductListings from './ProductListings';
 
 class RouteProductDetails extends Component{
   constructor(props){
@@ -17,6 +18,7 @@ class RouteProductDetails extends Component{
       product:null,
       currentUser:{},
       visible: false,
+      redirect: false
     }
   }
 
@@ -75,17 +77,20 @@ class RouteProductDetails extends Component{
     }
     var {id} = this.props;
     api.updateProducts(id,data)
-    // this.props.openModal()
   }
+
+  // Redirect = () => {
+  //   if (this.state.redirect) {
+  //     return <Router><Redirect to='/' /></Router>
+  //   }
+  // }
 
   
   render(){
     var {product,currentUser} = this.state;
     var user_id = localStorage.getItem('userID')
 
-
-
-
+    
     return product ? (
       <>
 
