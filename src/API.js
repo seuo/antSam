@@ -22,6 +22,7 @@ var api = {
         return axios.put(url+'/products/'+id,data)
     },
     
+    
     deleteProduct : (id) => {
         return axios.delete(url+'/products/'+id)
     },
@@ -41,10 +42,6 @@ var api = {
     getCategory : (id) => {
         return axios.get(url+'/categories/'+id)
     },
-    
-    // getCategoryName : (name) => {
-    //     return axios.get(url+'/categories/'+name)
-    // },
     
     uploadPhoto : (data) => {
         return axios.post(url+'/upload',data)

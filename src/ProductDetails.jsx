@@ -56,7 +56,7 @@ class RouteProductDetails extends Component{
               // currentUser:currentUser,
               refreshData: () => this.routeGetProduct(product.id)
             }
-            return <Review {...reviewProps} />
+            // return <Review  {...reviewProps} />
           })
         }
       </div>

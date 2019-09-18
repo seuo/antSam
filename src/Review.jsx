@@ -40,11 +40,12 @@ class Review extends Component {
 					</Form.Label>
 			</Form.Group>
 			<Form.Group controlId="formGridFile">
-					<Form.Label>Review by: {
-								review.user
-									? review.user.name
-									: 'anonymous'
-							}
+                    <Form.Label>Review by: {currentUser}
+                    {/* {
+								currentUser
+									? currentUser
+									: null
+							} */}
 					</Form.Label>
 			</Form.Group>
 

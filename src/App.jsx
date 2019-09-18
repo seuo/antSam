@@ -6,12 +6,12 @@ import Products from './Products';
 import AddProduct from './AddProduct';
 import EditProduct from './EditProduct';
 import Login from './Login';
+import UserProfile from './UserProfile';
 import Product from './Product';
 import PurchaseProductDetail from './PurchaseProductDetail';
 import RouteProductDetails from './RouteProductDetails';
 import PurchaseProductListings from './PurchaseProductListings';
 import RouteCat from './RouteCategory';
-import OutStore from './OurStore';
 import {
   Accordion,
   Card,
@@ -23,7 +23,9 @@ import {
   Col,
   Image,
   FormControl,
-  InputGroup
+  InputGroup,
+  Tabs,
+  Tab,
 } from 'react-bootstrap';
 import './App.css';
 import Modal from 'react-awesome-modal';
@@ -186,7 +188,7 @@ componentDidMount=()=>
             <EditProduct path="/products/:id/edit"/>
             <RouteProductDetails path="/products/:id"/>
             <PurchaseProductListings path="/purchases"/>
-            <OutStore path ="/ourstore"/>
+            <UserProfile path="/user-profile"/>
           </Router>
  
           </div>

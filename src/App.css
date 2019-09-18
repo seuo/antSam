@@ -368,32 +368,6 @@ a {
   background-color: #f2f2f2;
 }
 
-.productsListing {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background-color: #fff;
-  padding-top: .2em;
-}
-
-.productsListing .col {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 49%;
-          flex: 1 0 49%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
-  max-width: 50%;
-  padding: 1em;
-}
-
 .listings h1 {
   text-align: center;
 }
@@ -432,6 +406,32 @@ a {
   font-size: 1em;
 }
 
+.productsListing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #fff;
+  border-bottom: solid thin #0c0c0c;
+}
+
+.productsListing .col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 49%;
+          flex: 1 0 49%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  max-width: 50%;
+  padding: 1em;
+}
+
 .productsListing .col .card {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -467,11 +467,19 @@ a {
 
 .productsListing .col:nth-child(odd) {
   border-right: solid thin #0c0c0c;
-  border-bottom: solid thin #0c0c0c;
+  border-top: solid thin #0c0c0c;
 }
 
 .productsListing .col:nth-child(even) {
+  border-top: solid thin #0c0c0c;
+}
+
+.productsListing .col:nth-last-child(2) {
   border-bottom: solid thin #0c0c0c;
+}
+
+.productsListing .col:nth-child(-n+2) {
+  border-top: solid thin #f2f2f2;
 }
 
 .productForm {

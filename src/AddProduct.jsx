@@ -66,17 +66,17 @@ class AddProduct extends Component{
 					</Form.Control>
 				</Form.Group>
 				<Form.Group controlId="formBnaasicName">
-					<Form.Control type="text" className="form-c" name="name-input" id="name-input" placeholder="Name of your product"/>
+					<Form.Control type="text" className="form-control" name="name-input" id="name-input" placeholder="Name of your product"/>
 				</Form.Group>
 				<Form.Group controlId="formBasicDesc">
-					<Form.Control type="text" className="form-c" name="description-input" id="description-input" placeholder="Product description"/>
+					<Form.Control type="text" className="form-control" name="description-input" id="description-input" placeholder="Product description"/>
 				</Form.Group>
 				<Form.Group controlId="formBasicPrice">
 				<div className="priceInput"><span>$</span><Form.Control type="number" className="form-control" name="price-input" id="price-input" placeholder="Enter price"/></div>
 				</Form.Group>
 
 				<Form.Group controlId="formBasicPhoto">
-					<Form.Control type="file" className="form-c" name="photo-input" id="photo-input" placeholder="Add photo"/>
+					<Form.Control type="file" className="form-control" name="photo-input" id="photo-input" placeholder="Add photo"/>
 				</Form.Group>
 
 				<Button variant="primary" type="submit">
