@@ -411,7 +411,7 @@ a {
   display: -ms-flexbox;
   display: flex;
   background-color: #fff;
-  border-bottom: solid thin #0c0c0c;
+  border-bottom: solid thin #495158;
 }
 
 .productsListing .col {
@@ -466,16 +466,16 @@ a {
 }
 
 .productsListing .col:nth-child(odd) {
-  border-right: solid thin #0c0c0c;
-  border-top: solid thin #0c0c0c;
+  border-right: solid thin #495158;
+  border-top: solid thin #495158;
 }
 
 .productsListing .col:nth-child(even) {
-  border-top: solid thin #0c0c0c;
+  border-top: solid thin #495158;
 }
 
 .productsListing .col:nth-last-child(2) {
-  border-bottom: solid thin #0c0c0c;
+  border-bottom: solid thin #495158;
 }
 
 .productsListing .col:nth-child(-n+2) {

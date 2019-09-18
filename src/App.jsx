@@ -186,7 +186,7 @@ componentDidMount=()=>
             <Products path="/products"/>
             <AddProduct path="/products/new"/>
             <EditProduct path="/products/:id/edit"/>
-            <RouteProductDetails path="/products/:id"/>
+            <RouteProductDetails path="/products/:id" openModal={this.openModal} />
             <PurchaseProductListings path="/purchases"/>
             <UserProfile path="/user-profile"/>
           </Router>
