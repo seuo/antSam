@@ -5,7 +5,7 @@ import {Router, Link, navigate} from '@reach/router';
 import {api} from './API';
 import Carousel from 'react-multi-carousel';
 import {Col, Card, Button, Image, Row, Jumbotron, Container} from 'react-bootstrap';
-import {push} from 'react-router-redirect';
+
 
 import './App.css';
 
@@ -184,9 +184,7 @@ class ProductListings extends Component {
             </Carousel>
             <Container>
                     <Row className="productsListing">
-                    {
-
-                        
+                    {                       
                             activeProducts.map((item) => {
                             var itemProps = {
                                 ...item,
