@@ -16,15 +16,14 @@ class RouteCat extends Component {
     }
 
 
+
     routeGetCat = (id) => {
         api.getCategory(id).then(res => this.setState({category:res.data}))
     }
 
-
     componentDidMount(){
         var {id} = this.props
         this.routeGetCat(id)
-
     }
 
     componentDidUpdate(prevProps, prevState){
@@ -37,12 +36,7 @@ class RouteCat extends Component {
 
     render(){
         var {category} = this.state
-
-        var catProd = this.state.category
-        console.log(catProd)
         
-
-
         return category ? (
             <Container className="categoryContainer">
                 <Row className="productsListing">
@@ -54,8 +48,6 @@ class RouteCat extends Component {
                                 key:item.id,
                                 refreshData:() => this.routeGetCat(category.name)
                             };
-
-
                             return (
                                 <Item {...itemProps} />
                             )

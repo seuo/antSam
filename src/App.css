@@ -49,7 +49,7 @@ a {
 }
 
 .form-group .btn-primary {
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 .btn-group.btn-group-toggle {
@@ -80,8 +80,8 @@ a {
   border-bottom: thin solid #3f3f3f;
   border-radius: 0;
   outline: 0;
-  -webkit-box-shadow: 0 0 0 0rem #3f3f3f;
-          box-shadow: 0 0 0 0rem #3f3f3f;
+  -webkit-box-shadow: 0 0 0 0 #3f3f3f;
+          box-shadow: 0 0 0 0 #3f3f3f;
   font-size: 1em;
 }
 
@@ -128,7 +128,7 @@ a {
 }
 
 .editButton {
-  padding: .5em;
+  padding: 0.5em;
   text-align: left;
   border: #cdcdcd;
   background-color: white;
@@ -153,8 +153,8 @@ a {
 }
 
 .Item .card {
-  border: 0em;
-  margin-top: .2em;
+  border: 0;
+  margin-top: 0.2em;
   width: 100%;
   border-bottom: thin solid #f2f2f2;
   border-radius: 0;
@@ -166,7 +166,7 @@ a {
 }
 
 .Item .card .card-img-featured {
-  padding: 0em;
+  padding: 0;
   width: 75vw;
 }
 
@@ -184,7 +184,11 @@ a {
   -webkit-box-flex: 0;
       -ms-flex: 0;
           flex: 0;
-  padding: 1em 0 0 0;
+  padding: 1em 0 0;
+}
+
+.Item .card .card-body h5 {
+  text-align: center;
 }
 
 .Item .card .card-body .card-title {
@@ -223,9 +227,9 @@ a {
 }
 
 .Item .card .card-body .productPrice button {
-  padding: 0em 1em;
+  padding: 0 1em;
   border: none;
-  border-radius: .1em;
+  border-radius: 0.1em;
   color: #A68B3C;
   background-color: #fcfcfc;
 }
@@ -243,7 +247,7 @@ a {
   border-radius: 0;
   color: #3f3f3f;
   font-weight: 500;
-  padding: .2em;
+  padding: 0.2em;
   font-weight: 700;
 }
 
@@ -255,7 +259,9 @@ a {
   border-bottom: thin solid #3f3f3f;
 }
 
-.Item .card .btn-primary:not(:disabled):not(.disabled).active, .Item .card .btn-primary:not(:disabled):not(.disabled):active, .Item .card .show > .btn-primary.dropdown-toggle {
+.Item .card .btn-primary:not(:disabled):not(.disabled).active,
+.Item .card .btn-primary:not(:disabled):not(.disabled):active,
+.Item .card .show > .btn-primary.dropdown-toggle {
   color: #fff;
   background-color: #3f3f3f;
   border-color: #3f3f3f;
@@ -266,10 +272,33 @@ a {
   border: none;
 }
 
-.Item .card .btn-outline-dark:not(:disabled):not(.disabled):active, .Item .card .show > .btn-outline-dark.dropdown-toggle {
+.Item .card .btn-outline-dark:not(:disabled):not(.disabled):active,
+.Item .card .show > .btn-outline-dark.dropdown-toggle {
   color: #bfbfbf;
   background-color: #343a40;
   border-color: #343a40;
+}
+
+.modalText {
+  padding: 1em;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.modalText h6 {
+  padding: 0em;
+  margin: 0em;
 }
 
 .react-multi-carousel-item {
@@ -301,7 +330,7 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0px;
+  margin: 0;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
@@ -317,18 +346,17 @@ a {
   border: none;
   border-radius: 2em;
   opacity: 1;
-  padding: 5px 5px 5px 5px;
+  padding: 5px;
   -webkit-box-shadow: none;
           box-shadow: none;
-  -webkit-transition: background .5s;
-  transition: background .5s;
+  -webkit-transition: background 0.5s;
+  transition: background 0.5s;
   border-width: 0;
   border-style: solid;
   color: grey;
   background-color: #f2f2f2;
   padding: 0;
   margin: 0;
-  margin-right: 0;
   outline: 0;
   cursor: pointer;
 }
@@ -339,7 +367,7 @@ a {
 }
 
 .browseNav {
-  padding: 0em 2em 0em 2em;
+  padding: 0 2em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -353,7 +381,7 @@ a {
 }
 
 .browseNav .browseNavButton {
-  padding: .5em;
+  padding: 0.5em;
   text-transform: capitalize;
 }
 
@@ -475,11 +503,28 @@ a {
 }
 
 .productsListing .col:nth-last-child(2) {
+  border-bottom: none;
+}
+
+.productsListing .col:nth-child(1) {
   border-bottom: solid thin #495158;
 }
 
+.productsListing .col:nth-child(2) {
+  border-bottom: solid thin #495158;
+}
+
+.productsListing .col:nth-child(3) {
+  border-top: none;
+}
+
 .productsListing .col:nth-child(-n+2) {
-  border-top: solid thin #f2f2f2;
+  border-top: solid thin #495158;
+}
+
+.productsListing .col:nth-last-child(1) {
+  border-bottom: none;
+  border-top: none;
 }
 
 .productForm {

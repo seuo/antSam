@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Router, Link, navigate} from '@reach/router';
-import { Route, Switch } from "react-router";
-
 import ProductListings from './ProductListings';
 import Products from './Products';
 import AddProduct from './AddProduct';
@@ -14,8 +12,7 @@ import PurchaseProductDetail from './PurchaseProductDetail';
 import RouteProductDetails from './RouteProductDetails';
 import PurchaseProductListings from './PurchaseProductListings';
 import RouteCat from './RouteCategory';
-
-
+import RouteThanks from './RouteThanks';
 import {
   Accordion,
   Card,
@@ -125,11 +122,7 @@ componentDidMount=()=>
                        </InputGroup>
 
                        {
-                           this.state.currentUser ? <> <input
-                            className="loginButton"
-                            type="button"
-                            value="Logout"
-                            onClick={this.handleLogOut}/>
+                           this.state.currentUser ? <> 
                         </>:
                        <><input
                             className="loginButton"
@@ -144,7 +137,7 @@ componentDidMount=()=>
                           this.state.currentUser ? (
                           <>
                           
-                          <Navbar.Toggle className="userControl" aria-controls="responsive-navbar-nav"/>
+                          <Navbar.Toggle  className="userControl " aria-controls="responsive-navbar-nav"/>
 
                           <Navbar.Collapse id="responsive-navbar-nav">
                               <Nav className="mr-auto">
@@ -153,7 +146,12 @@ componentDidMount=()=>
                               <Nav.Link href="/products">My Products</Nav.Link>
                               <Nav.Link href="#watchlist">Watch List</Nav.Link>
                               <Nav.Link href="/my-reviews">My Reviews</Nav.Link>
-                              <Nav.Link href="/purchases">Purchase Products</Nav.Link>
+                              <br></br>
+                              <input
+                            className="loginButton"
+                            type="button"
+                            value="Logout"
+                            onClick={this.handleLogOut}/>
                               </Nav>
                           </Navbar.Collapse>
                           </>
@@ -182,15 +180,18 @@ componentDidMount=()=>
                   </Card>
               </Accordion>
           </div>
-          <Router>    
+         
+      
+          <Router>
             <ProductListings path="/"/>
             <RouteCat path="/categories/:id"/>
             <Products path="/products"/>
             <AddProduct path="/products/new"/>
             <EditProduct path="/products/:id/edit"/>
-            <RouteProductDetails path="/products/:id" openModal={this.openModal} />
+            <RouteProductDetails path="/products/:id"/>
             <PurchaseProductListings path="/purchases"/>
             <UserProfile path="/user-profile"/>
+            <RouteThanks path="/thanks"/>
           </Router>
  
           </div>
