@@ -13,26 +13,14 @@ import {
 class PurchaseProductListings extends Component{
   constructor(props){
     super(props)
-    this.state={
-      user:{},
     }
-   
-  }
-
-  componentDidMount=()=>{
-    
-    var userID = localStorage.getItem('userID')
-    
-    api.getUser(userID).then(res =>{
-      var user = res.data
-      this.setState({user})
-      
-  })
   
-}
+
+  
+
   render(){
-   
-    var products = this.state.user.purchases;
+   var {user} = this.props
+    var products = user.purchases
     
     return products ? (
       

@@ -493,38 +493,8 @@ a {
   margin: 0;
 }
 
-.productsListing .col:nth-child(odd) {
-  border-right: solid thin #495158;
-  border-top: solid thin #495158;
-}
-
 .productsListing .col:nth-child(even) {
-  border-top: solid thin #495158;
-}
-
-.productsListing .col:nth-last-child(2) {
-  border-bottom: none;
-}
-
-.productsListing .col:nth-child(1) {
-  border-bottom: solid thin #495158;
-}
-
-.productsListing .col:nth-child(2) {
-  border-bottom: solid thin #495158;
-}
-
-.productsListing .col:nth-child(3) {
-  border-top: none;
-}
-
-.productsListing .col:nth-child(-n+2) {
-  border-top: solid thin #495158;
-}
-
-.productsListing .col:nth-last-child(1) {
-  border-bottom: none;
-  border-top: none;
+  border-right: solid thin #495158;
 }
 
 .productForm {

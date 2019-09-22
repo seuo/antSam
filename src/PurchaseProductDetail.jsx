@@ -10,9 +10,9 @@ class PurchaseProductDetail extends Component {
   constructor(props){
     super(props);
   }
-  // routeGetProduct = (id) => {
-  //   api.getProduct(id).then(res => this.setState({product:res.data}))
-  // }
+  routeGetProduct = (id) => {
+    api.getProduct(id).then(res => this.setState({product:res.data}))
+  }
   deleteProduct = () => {
     var {id, refreshData} = this.props;
     api.deleteProduct(id).then(() => refreshData())

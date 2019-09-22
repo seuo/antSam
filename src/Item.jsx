@@ -11,12 +11,13 @@ class Item extends Component{
     super(props);
       this.state = {
         purchaser_id:null,
+        product:null,
     }
   }
   
-  // routeGetProduct = (id) => {
-  //   api.getProduct(id).then(res => this.setState({product:res.data}))
-  // }
+  routeGetProduct = (id) => {
+    api.getProduct(id).then(res => this.setState({product:res.data}))
+  }
 
   deleteProduct = () => {
     var {id, refreshData} = this.props;
@@ -26,6 +27,9 @@ class Item extends Component{
   componentDidMount(){
     var {purchaser_id} = this.props;
     this.setState({purchaser_id:purchaser_id})
+    var {id} = this.props
+    //console.log(id);
+    this.routeGetProduct(id)
   }
 
 
@@ -37,11 +41,11 @@ class Item extends Component{
       this.state.purchaser_id ? null : (
         <Col>
           <Card>
-          <Link to={'/products/'+id}><Card.Img variant="top" src={server+photo}/></Link>
+          <Link to={'/products/'+id}><Card.Img variant="top" src={server+photo}/>
               <Card.Body>
                   <Card.Title><Link to={'/products/'+id}>{name}</Link>
                   </Card.Title>
-              </Card.Body>
+              </Card.Body></Link>
           </Card>
         </Col>)
     );

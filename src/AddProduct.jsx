@@ -15,36 +15,31 @@ import './App.css';
 
 class AddProduct extends Component{
   constructor(props){
-    super(props)
+		super(props)
 	}
 
 	
 	
 	submitForm = (e) => {
-
 		e.preventDefault();
-
-		var {} = this.props;
 
 		var form = new FormData(this.form);
 
-		api.uploadPhoto(form).then(res => {
-			var file = res.data;
-			console.log(file);
+		api.uploadPhotos(form).then(res => {
+			var files = res.data
+			console.log(files);
 
 			var data = {
 				name: form.get('name-input'),
 				description: form.get('description-input'),
 				price: form.get('price-input'),
 				cat_name: form.get('cat-input'),
-				photo: file,
-
+				seller_id: this.props.user.id,
+				photos: files,
 			}
-
 			api.addProduct(data).then(navigate('/products'));
-
 			console.log(data);
-		});
+		})
 	}
 
 
@@ -76,7 +71,7 @@ class AddProduct extends Component{
 				</Form.Group>
 
 				<Form.Group controlId="formBasicPhoto">
-					<Form.Control type="file" className="form-control" name="photo-input" id="photo-input" placeholder="Add photo"/>
+					<Form.Control type="file" className="form-control" name="photo-input" id="photo-input" placeholder="Add photo" multiple/>
 				</Form.Group>
 
 				<Button variant="primary" type="submit">

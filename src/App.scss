@@ -163,9 +163,12 @@ a {
             }
         
     }
-    .navbar-dark .navbar-toggler-icon {
-        background-image:url("../src/profile-user.svg");
-        font-size:1.75em;
+    .navbar-default{
+        background-color:transparent;
+        border: none;
+        max-width: 2.3em;
+        padding:0;
+        border-radius:50%;
     }
 
     .Logo {

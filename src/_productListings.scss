@@ -131,28 +131,27 @@
 
     .col:nth-child(odd) {
         border-right: solid thin $color-4;
-        border-top: solid thin $color-4;
+        border-bottom: solid thin $color-4; 
     }
+
     .col:nth-child(even) {
-        border-top: solid thin $color-4;
+        border-bottom: solid thin $color-4; 
+        border-right: none;
+    }
+
+    .col:last-child {
+        border-bottom:none;
     }
     .col:nth-last-child(2) {
-        border-bottom: none;
+        border-bottom:none;
     }
-    .col:nth-child(1) {
-        border-bottom: solid thin $color-4;
+
+    .col:nth-child(4) {
+        border-bottom: solid thin $color-4; 
     }
-    .col:nth-child(2) {
-        border-bottom: solid thin $color-4;
+
+    .col:nth-child(4n-6) {
+        border-bottom: solid thin $color-4; 
     }
-    .col:nth-child(3) {
-        border-top: none;
-    }
-    .col:nth-child(-n+2) {
-        border-top: solid thin $color-4;
-    }
-    .col:nth-last-child(1) {
-        border-bottom: none;
-        border-top: none;
-    }
+
 }

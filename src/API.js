@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// var url = 'http://10.2.24.12:4001/api';
-// var server = 'http://10.2.24.12:4001/home/';
+// var url = 'http://10.2.24.18:4001/api';
+// var server = 'http://10.2.24.18:4001/';
 
 var url = 'http://localhost:4001/api';
 var server = 'http://localhost:4001/';
@@ -15,7 +15,7 @@ var api = {
     },
     
     updateProduct : (id,data) => {
-        return axios.get(url+'/products/'+id,data)
+        return axios.put(url+'/products/'+id,data)
     },
 
     updateProducts : (id,data) => {
@@ -47,6 +47,10 @@ var api = {
         return axios.post(url+'/upload',data)
     },
 
+    uploadPhotos : (data) => {
+        return axios.post(url+'/uploads',data)
+    },
+
     authenticate : (data) => {
         return axios.post(url+'/authenticate',data)
     },
@@ -58,8 +62,12 @@ var api = {
        return axios.post(url+'/users/',data)
     },
 
+    updateUser: (id,data) => {
+        return axios.put(url+'/users/'+id,data)
+     },
+
     addReview : (data) => {
-        return axios.post(url+'/reviews',data)
+        return axios.get(url+'/reviews',data)
     },
     
     // updateReview : (id,data) => {
