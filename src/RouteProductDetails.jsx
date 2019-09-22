@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-// import {Link, navigate} from '@reach/router';
-import Review from './Review';
 import {Link, navigate} from '@reach/router';
 import {
     Form,
@@ -15,7 +13,6 @@ import {
 import {api, server} from './API';
 import Modal from 'react-awesome-modal';
 import Login from './Login';
-import Item from './Item';
 
 import './App.css';
 
@@ -93,10 +90,10 @@ class RouteProductDetails extends Component {
                     </Card.Body>
                 </Card>
             </div>
-            <Modal visible = {this.state.mLogin}width = "95%" height = "80%" effect = "fadeInUp" onClickAway = {() => this.closeLoginModal()}> 
+            <Modal className="modalStyle" visible = {this.state.mLogin}width = "95%" height = "80%" effect = "fadeInUp" onClickAway = {() => this.closeLoginModal()}> 
             <div className="loginModal">
                     <span>
-                        <h6>Login or Register to buy & sell</h6>
+                        <h6>Login / Register to Buy & Sell</h6>
                         <a href="javascript:void(0);" onClick={() => this.closeLoginModal()}>
                             <i className="far fa-window-close"></i>
                         </a>
@@ -108,6 +105,7 @@ class RouteProductDetails extends Component {
                 </div>
             </Modal>
             <Modal
+                className="modalStyle"
                 visible={this.state.mCreditCard}
                 width="95%"
                 height="80%"

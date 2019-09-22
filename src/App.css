@@ -19,6 +19,11 @@ h1, h2, h3, h4, h5 {
   font-family: 'Raleway', sans-serif;
 }
 
+h1 {
+  font-size: 2em;
+  margin-top: .3em;
+}
+
 a {
   color: #A68B3C;
 }
@@ -120,10 +125,12 @@ a {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   border: thin solid;
-  background-color: #3f3f3f;
+  background-color: #fcfcfc;
+  border: none;
+  border-bottom: thin solid #A68B3C;
   width: 100%;
   border-radius: 0;
-  color: #bfbfbf;
+  color: #0c0c0c;
   font-weight: 500;
 }
 
@@ -201,6 +208,7 @@ a {
       -ms-flex-align: center;
           align-items: center;
   padding: 0;
+  font-size: 1em;
 }
 
 .Item .card .card-body .card-text {
@@ -367,7 +375,7 @@ a {
 }
 
 .browseNav {
-  padding: 0 2em;
+  padding: 0 1.5em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -381,8 +389,11 @@ a {
 }
 
 .browseNav .browseNavButton {
-  padding: 0.5em;
+  padding: 0.4em;
   text-transform: capitalize;
+  -webkit-transition: ease all .7s;
+  transition: ease all .7s;
+  font-size: .9em;
 }
 
 .browseNav a:hover {
@@ -398,6 +409,27 @@ a {
 
 .listings h1 {
   text-align: center;
+}
+
+.categoryContainer .noListing {
+  z-index: 1;
+  position: absolute;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.4em;
+  padding-top: 1em;
+}
+
+.categoryContainer .noListing p {
+  text-transform: capitalize;
+  padding-top: .4em;
+  font-weight: 700;
 }
 
 .categoryContainer .card {
@@ -440,6 +472,7 @@ a {
   display: flex;
   background-color: #fff;
   border-bottom: solid thin #495158;
+  z-index: 5;
 }
 
 .productsListing .col {
@@ -493,8 +526,30 @@ a {
   margin: 0;
 }
 
-.productsListing .col:nth-child(even) {
+.productsListing .col:nth-child(odd) {
   border-right: solid thin #495158;
+  border-bottom: solid thin #495158;
+}
+
+.productsListing .col:nth-child(even) {
+  border-bottom: solid thin #495158;
+  border-right: none;
+}
+
+.productsListing .col:first-child {
+  border-bottom: solid thin #495158;
+}
+
+.productsListing .col:last-child {
+  border-bottom: none;
+}
+
+.productsListing .col:nth-child(4) {
+  border-bottom: solid thin #495158;
+}
+
+.productsListing .col:nth-child(4n-6) {
+  border-bottom: solid thin #495158;
 }
 
 .productForm {
@@ -638,6 +693,71 @@ a {
   border: thin solid #f2f2f2;
 }
 
+.footer {
+  background-color: #3f3f3f;
+  color: #8c8c8c;
+  font-size: .9em;
+  padding: .5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  -webkit-transition: top 0.6s;
+  transition: top 0.6s;
+  -webkit-transition: ease all .3s;
+  transition: ease all .3s;
+  z-index: 9;
+}
+
+.footer .lCol {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 0;
+}
+
+.footer .rCol {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 0;
+}
+
+.footer .linkColor {
+  text-align: center;
+  padding: 0em;
+}
+
+.footer .container {
+  height: 2.5em;
+}
+
+.footer svg {
+  font-size: 1.5em;
+  stroke-width: 1;
+}
+
+.footer--hidden {
+  bottom: -5em;
+}
+
 .wrap {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -656,6 +776,7 @@ a {
 
 .Header {
   position: relative;
+  z-index: 9;
 }
 
 .Header .navBarbot {
@@ -675,11 +796,14 @@ a {
   background-color: transparent;
   color: #3f3f3f;
   border-radius: .1em;
-  border: thin solid #495158;
+  border: none;
+  border-bottom: thin solid #495158;
   color: #8c8c8c;
   text-align: center;
-  padding: .2em;
+  padding: .2em .5em;
+  margin-top: .4em;
   cursor: pointer;
+  font-size: .9em;
 }
 
 .Header .navBarbot button.navbar-toggler {
@@ -702,8 +826,17 @@ a {
   text-align: right;
   background-color: #343a40;
   padding: 2em;
-  top: 7.8em;
+  top: 4em;
   z-index: 999;
+}
+
+.Header .navBarbot div#responsive-navbar-nav .loginButton {
+  border: thin solid #495158;
+}
+
+.Header .navBarbot div#responsive-navbar-nav svg {
+  font-size: 1.4em;
+  margin-top: -.14em;
 }
 
 .Header .navBarbot .searchBar {
@@ -755,15 +888,19 @@ a {
   padding: .2em;
 }
 
-.Header .navbar-dark .navbar-toggler-icon {
-  background-image: url("../src/profile-user.svg");
-  font-size: 1.75em;
+.Header .navbar-default {
+  background-color: transparent;
+  border: none;
+  max-width: 2.3em;
+  padding: 0;
+  border-radius: 50%;
 }
 
 .Header .Logo {
   padding-top: .5em;
   padding-bottom: .5em;
-  width: 15em;
+  width: 9em;
+  padding-right: .5em;
 }
 
 .Header .Navbar {
@@ -780,6 +917,10 @@ a {
   padding-left: 2em;
   padding-right: 2em;
   padding-bottom: .5em;
+}
+
+.modalStyle div {
+  border-radius: .1em !important;
 }
 
 .loginModal {
@@ -806,11 +947,26 @@ a {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 1em;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  color: #0c0c0c;
+}
+
+.loginModal span svg {
+  font-size: 1.4em;
+  stroke-width: 1;
 }
 
 .loginModal span a {
   color: #495158;
   font-size: 1.5em;
+  width: 10;
+  height: 10;
+}
+
+.loginModal span a span {
+  padding: 0em;
 }
 
 .loginModal .loginForm {
@@ -834,8 +990,10 @@ a {
 }
 
 .loginModal .loginForm button {
-  background-color: #495158;
+  background-color: #3f3f3f;
   border: none;
+  color: #A68B3C;
+  border-bottom: thin solid #A68B3C;
 }
 
 .section {
@@ -879,7 +1037,7 @@ a {
 
 .section .FilterCat {
   background-color: white;
-  color: #8c8c8c;
+  color: #0c0c0c;
   text-align: center;
   border-bottom: thin solid #495158;
   cursor: pointer;
@@ -890,14 +1048,43 @@ a {
 }
 
 .section .FilterCat .card-header {
+  letter-spacing: .1em;
   padding: 0;
   background-color: white;
   border: 0;
   padding: .3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: .1em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.section .FilterCat .card-header h3 {
+.section .FilterCat .card-header svg {
+  font-size: 2.2em;
+  padding-bottom: 0.2em;
+  stroke-width: 1;
+}
+
+.section .FilterCat .card-header h5 {
   font-family: Raleway;
+  padding-left: 1.3em;
+  line-height: 1.5;
+}
+
+.section .FilterCat .card-header .backArrow {
+  position: absolute;
+  left: 0.2em;
+  width: 3.5em;
+  padding-top: .3em;
+  position: absolute;
+  font-size: 1.5em;
+  stroke-width: 1;
 }
 
 .section .container {
@@ -916,13 +1103,6 @@ a {
 
 .section .container h3 {
   padding-top: .5em;
-}
-
-.footer {
-  background-color: #3f3f3f;
-  color: #8c8c8c;
-  font-size: .9em;
-  padding: 1em;
 }
 
 .NoPad {

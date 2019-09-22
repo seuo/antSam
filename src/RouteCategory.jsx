@@ -39,8 +39,9 @@ class RouteCat extends Component {
         
         return category ? (
             <Container className="categoryContainer">
+                <Row className="noListing"><h6>Sorry, there are currently 0 listings under <p>{category.name}</p> </h6></Row>
                 <Row className="productsListing">
-                    
+                
                     {
                         category.products.map((item) => {
                             var itemProps = {

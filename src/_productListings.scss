@@ -51,13 +51,15 @@
 }
 
 .browseNav {
-    padding: 0 2em;
+    padding: 0 1.5em;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     .browseNavButton {
-        padding: 0.5em;
+        padding: 0.4em;
         text-transform: capitalize;
+        transition: ease all .7s;
+        font-size:.9em;
     }
     a:hover {
         color: $color-5;
@@ -79,6 +81,21 @@
 }
 
 .categoryContainer {
+    .noListing {
+        z-index: 1;
+        position: absolute;
+        text-align: center;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        padding: 0.4em;
+        padding-top:1em;
+        p {
+            text-transform: capitalize;
+            padding-top:.4em;
+            font-weight:700;
+        }
+    }
     .card {
         display: flex;
         flex-direction: column;
@@ -93,6 +110,7 @@
                 padding-top: 1em;
                 margin: 0;
                 font-size: 1em;
+                
             }
         }
     }
@@ -102,6 +120,7 @@
     display: flex;
     background-color: #fff;
     border-bottom: solid thin $color-4;
+    z-index: 5;
     .col {
         display: flex;
         flex: 1 0 49%;
@@ -139,12 +158,16 @@
         border-right: none;
     }
 
+
+    .col:first-child {
+        border-bottom:solid thin $color-4; 
+    }
     .col:last-child {
         border-bottom:none;
     }
-    .col:nth-last-child(2) {
-        border-bottom:none;
-    }
+    // .col:nth-last-child(2) {
+    //     border-bottom:none;
+    // }
 
     .col:nth-child(4) {
         border-bottom: solid thin $color-4; 

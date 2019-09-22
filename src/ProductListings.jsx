@@ -1,13 +1,11 @@
 import React, {Component} from 'react';
 import Item from './Item';
-import RouteProductDetails from './RouteProductDetails';
 import {Router, Link, navigate} from '@reach/router';
 import {api} from './API';
 import Carousel from 'react-multi-carousel';
 import {
     Col,
     Card,
-    Button,
     Image,
     Row,
     Jumbotron,
@@ -198,7 +196,7 @@ class ProductListings extends Component {
                             <Container>
                                 <h1>Our Store</h1>
                                 <p>
-                                    We stock a huge range of new & second trade in's. We check the listing matches
+                                    We stock a huge range of new & second hand trade in's. We check the listing matches
                                     the product for quality assurance.
                                 </p>
                             </Container>

@@ -29,6 +29,13 @@ h1, h2 ,h3, h4, h5 {
     font-family: 'Raleway', sans-serif;
 }
 
+h1 {
+    font-size: 2em;
+    margin-top: .3em;
+}
+
+
+
 a {
     color:$link-color;
 }
@@ -72,6 +79,7 @@ a {
 @import "_userAdmin.scss";
 @import "_review.scss";
 @import "_imageGrid.scss";
+@import "_footer.scss";
 
 .wrap {
     display: flex;
@@ -85,6 +93,7 @@ a {
 
 .Header {
     position:relative;
+    z-index: 9;
     .navBarbot {
         width: 100%;
         display: flex;
@@ -94,11 +103,14 @@ a {
             background-color:transparent;
             color:$color-5;
             border-radius: .1em;
-            border:thin solid $color-4;
+            border:none;
+            border-bottom:thin solid $color-4;
             color:$color-3;
             text-align: center;
-            padding: .2em;
+            padding: .2em .5em;
+            margin-top:.4em;
             cursor: pointer;
+            font-size:.9em;
         }
     
         button.navbar-toggler {
@@ -119,8 +131,15 @@ a {
             text-align: right;
             background-color: #343a40;
             padding: 2em;
-            top: 7.8em;
+            top: 4em;
             z-index: 999;
+            .loginButton {
+                border:thin solid $color-4;
+            }
+            svg {
+                font-size:1.4em;
+                margin-top:-.14em;
+            }
         }
         .searchBar {
             border-radius: 2em 0em 0em 2em;
@@ -174,7 +193,8 @@ a {
     .Logo {
         padding-top: .5em;
         padding-bottom: .5em;
-        width: 15em;
+        width: 9em;
+        padding-right: .5em;
     }
     .Navbar {
         justify-content: center;
@@ -187,13 +207,16 @@ a {
         padding-bottom:.5em;
     }
 }
-
+.modalStyle {
+    div {
+        border-radius: .1em !important;
+    }
+}
 
     .loginModal {
         color:$color-3;
         .accordion {
             .card {
-
                 .card-header {
                     border:none;
                     border-bottom:$color-4;
@@ -210,9 +233,21 @@ a {
             display:flex;
             justify-content: space-between;
             padding:1em;
+            align-items: flex-end;
+            color:$color-6;
+            svg {
+                font-size:1.4em;
+                stroke-width: 1;
+            }
             a {
                 color:$color-4;
                 font-size:1.5em;
+                width:10;
+                height:10;
+                span {
+                    padding:0em;
+
+                }
             }
         }
         .loginForm {
@@ -227,8 +262,11 @@ a {
                 border-radius:0;
             }
             button {
-                background-color:  $color-4;
+                background-color:  $color-5;
                 border:none;
+                color:$link-color;
+       
+                border-bottom:thin solid $link-color;
             }
         }
     }
@@ -260,7 +298,7 @@ a {
 
             .FilterCat {
                 background-color:white;
-                color:$color-3;
+                color:$color-6;
                 text-align: center;
                 border-bottom:thin solid $color-4;
                 cursor: pointer;
@@ -268,13 +306,34 @@ a {
                     background: white;
                 }
                 .card-header {
-                    
+                    letter-spacing: .1em;
                     padding: 0;
                     background-color: white;
                     border:0;
                     padding: .3em;
-                    h3 {
-                        font-family:Raleway;
+                    display: flex;
+                    justify-content: center;
+                    padding-bottom: .1em;
+                    align-items: center;
+
+                    svg {
+                        font-size: 2.2em;
+                        padding-bottom: 0.2em;
+                        stroke-width: 1;
+                    }
+                    h5 {
+                        font-family: Raleway;
+                        padding-left: 1.3em;
+                        line-height: 1.5;
+                    }
+                    .backArrow {
+                        position: absolute;
+                        left:0.2em;
+                        width:3.5em;
+                        padding-top:.3em;
+                        position: absolute;
+                        font-size: 1.5em;
+                        stroke-width: 1;
                     }
                 }
             
@@ -296,12 +355,7 @@ a {
 
 }
 
-.footer {
-    background-color:$color-5;
-    color:$color-3;
-    font-size:.9em;
-    padding:1em;
-}
+
 
 // misc
 
@@ -311,9 +365,6 @@ a {
         margin:0;
     }
 }
-
-
-
 
 
 // // Extra small devices (portrait phones, less than 576px)

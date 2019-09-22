@@ -45,10 +45,12 @@
         display: flex;
         justify-content: space-around;
         border: thin solid;
-        background-color: $color-5;
+        background-color: $color-0;
+        border:none;
+        border-bottom:thin solid $link-color;
         width: 100%;
         border-radius: 0;
-        color: $color-2;
+        color: $color-6;
         font-weight: 500;
     }
 }
@@ -97,6 +99,7 @@
                 justify-content: space-around;
                 align-items: center;
                 padding: 0;
+                font-size:1em;
             }
             .card-text {
                 // text-align:center;

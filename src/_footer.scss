@@ -1,0 +1,42 @@
+.footer {
+    background-color:$color-5;
+    color:$color-3;
+    font-size:.9em;
+    padding:.5em;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    bottom: 0;
+    transition: top 0.6s;
+    transition:ease all .3s;
+    z-index: 9;
+    .lCol {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding:0;
+  }
+    .rCol {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding:0;
+    }
+    .linkColor {
+      text-align: center;
+      padding: 0em;
+      
+    }
+    .container {
+        height: 2.5em;
+    }
+    svg {
+      font-size:1.5em;
+      stroke-width: 1;
+    }
+}
+
+  .footer--hidden {
+    bottom: -5em;
+
+  }
