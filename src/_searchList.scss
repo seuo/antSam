@@ -1,0 +1,28 @@
+.filterCat {
+    .btn-secondary{
+        color: $link-color;
+        background-color:$color-2;
+        border:none;
+    }
+}
+
+.searchList{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+    .col {
+        width: 75%;
+    }
+}
+
+.searchResults.row {
+    display: flex;
+    flex-direction: column;
+}
+
+.searchBox {
+    input {
+        width:100%;
+    }
+}

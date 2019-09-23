@@ -3,6 +3,8 @@ import Item from './Item';
 import {Router, Link, navigate} from '@reach/router';
 import {api} from './API';
 import Carousel from 'react-multi-carousel';
+
+
 import {
     Col,
     Card,
@@ -60,9 +62,8 @@ class ProductListings extends Component {
     }
 
     render() {
-        var {
-            products
-        } = this.state;
+        var {products} = this.state;
+        
         return (
 
             <div className="Item carousel-container">
@@ -174,6 +175,7 @@ class ProductListings extends Component {
                     </div>
                 </Carousel>
                 <Container>
+
                     <Row className="productsListing">
                         {
                             products.map((item) => {

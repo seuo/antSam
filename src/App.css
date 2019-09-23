@@ -844,6 +844,44 @@ a {
   bottom: -5em;
 }
 
+.filterCat .btn-secondary {
+  color: #A68B3C;
+  background-color: #bfbfbf;
+  border: none;
+}
+
+.searchList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.searchList .col {
+  width: 75%;
+}
+
+.searchResults.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.searchBox input {
+  width: 100%;
+}
+
 .wrap {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1160,6 +1198,17 @@ a {
   text-align: center;
   border-bottom: thin solid #495158;
   cursor: pointer;
+}
+
+.section .FilterCat .btn-secondary {
+  color: #A68B3C;
+  background-color: transparent;
+  border: none;
+  -webkit-transition: none;
+  transition: none;
+  position: absolute;
+  right: .5em;
+  margin-top: -1.5em;
 }
 
 .section .FilterCat .card {

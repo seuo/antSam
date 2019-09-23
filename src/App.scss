@@ -80,6 +80,7 @@ a {
 @import "_review.scss";
 @import "_imageGrid.scss";
 @import "_footer.scss";
+@import "_searchList.scss";
 
 .wrap {
     display: flex;
@@ -325,6 +326,15 @@ a {
                 text-align: center;
                 border-bottom:thin solid $color-4;
                 cursor: pointer;
+                .btn-secondary{
+                    color: $link-color;
+                    background-color:transparent;
+                    border:none;
+                    transition: none;
+                    position: absolute;
+                    right: .5em;
+                    margin-top: -1.5em;
+                }
                 .card {
                     background: white;
                 }

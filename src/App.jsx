@@ -14,15 +14,16 @@ import RouteCat from './RouteCategory';
 import RouteThanks from './RouteThanks';
 import RouteFeaturedProduct from './RouteFeaturedProduct';
 import Footer from './Footer';
+import ProductSearch from './ProductSearch';
 
 import {
-  Accordion,Nav,Navbar,Container,Card,Image,Row,NavDropdown
+  Accordion,Nav,Navbar,Container,Card,Image,Row,NavDropdown,Popover,Button,ButtonToolbar,OverlayTrigger
 } from 'react-bootstrap';
 import './App.css';
 import Modal from 'react-awesome-modal';
 import {Router, Link, navigate, createMemorySource, createHistory} from '@reach/router';
 import 'react-multi-carousel/lib/styles.css';
-import { FiChevronDown,FiChevronLeft  } from "react-icons/fi";
+import { FiChevronDown,FiChevronLeft,FiSearch  } from "react-icons/fi";
 import { IoIosArrowRoundBack,IoIosClose,IoIosAdd } from "react-icons/io";
 import {api,server} from './API';
 
@@ -173,6 +174,23 @@ componentDidMount=()=>
                       <span onClick={this.goBack} className="backArrow" to="/"><FiChevronLeft/></span>
                           <Accordion.Toggle as={Card.Header} eventKey="0">
                           <h5>CATAGORIES</h5><FiChevronDown/>
+                    <ButtonToolbar>
+                            {['bottom'].map(placement => (
+                              <OverlayTrigger
+                                trigger="click"
+                                key={placement}
+                                placement={placement}
+                                overlay={
+                                  <Popover id={`popover-positioned-${placement}`}>
+                                    <Popover.Title as="h3"><ProductSearch/></Popover.Title>
+                                  </Popover>
+                                }
+                              >
+                                <Button variant="secondary"><FiSearch/></Button>
+                              </OverlayTrigger>
+                            ))}
+                          </ButtonToolbar>
+                          
                           </Accordion.Toggle>
                           
                       </Card.Header>
