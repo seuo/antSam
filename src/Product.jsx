@@ -4,8 +4,6 @@ import {Link, navigate} from '@reach/router';
 import {api, server} from './API';
 import {Card, Carousel, Button, ListGroup} from 'react-bootstrap';
 
-import './App.css';
-
 class Product extends Component{
   constructor(props){
     super(props);

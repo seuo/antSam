@@ -8,14 +8,13 @@ import {
   Button,
 } from 'react-bootstrap';
 
-import './App.css';
-
 
 class UserProducts extends Component{
   constructor(props){
     super(props)
     this.state = {
-      products: []
+      products: [],
+      item: null,
     }
   }
 
@@ -23,20 +22,28 @@ class UserProducts extends Component{
     var {user} = this.props
     api.getUser(user.id).then(res => {
       this.setState({products:res.data.products})
+
+    //   for(var i=0;i<res.data.products.length;i++){
+    //     if(res.data.products[i].purchaser_id == null){
+    //         this.state.products.push(i)
+    //     }
+    // }
     })
   }
 
   componentDidMount(){
     this.getProducts()
   }
-
+  
 
   
 
   render(){
     var {products} = this.state;
+    
     return(
-      
+       this.state.item ? null : (
+        <>
       <div className="listings">
         <h1>My Products</h1>
           <div className="listProduct"><Link to="/products/new"><Button className="AddButton" variant="primary" type="submit">List a product</Button></Link></div>
@@ -53,7 +60,7 @@ class UserProducts extends Component{
         }
         
       </div>
-
+      </>)
     );
   }
 

@@ -18,6 +18,7 @@
     "react-responsive-modal": "^4.0.1",
     "react-router-bootstrap": "^0.25.0",
     "react-scripts": "3.1.1",
+    "react-scroll-up-button": "^1.6.4",
     "react-svg-buttons": "^0.4.0",
     "sass-google-fonts": "^1.0.1"
   },

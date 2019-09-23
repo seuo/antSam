@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import {Link, navigate} from '@reach/router';
 import {Image, Col, Container, Row, Jumbotron, Card, Nav, Button, ListGroup} from 'react-bootstrap';
 
-import './App.css';
-
 class OurStore extends Component{
   constructor(props){
     super(props);

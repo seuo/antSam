@@ -14,8 +14,6 @@ import {api, server} from './API';
 import Modal from 'react-awesome-modal';
 import Login from './Login';
 
-import './App.css';
-
 class RouteProductDetails extends Component {
     constructor(props) {
         super(props);
@@ -46,6 +44,10 @@ class RouteProductDetails extends Component {
     routeGetProduct = (id) => {
         api.getProduct(id).then(res => this.setState({product:res.data}))
     }
+
+    addDefaultSrc(ev){
+        ev.target.src = '/coming-soon.png'
+      }
     
     componentDidMount(){
         var {id} = this.props;
@@ -54,11 +56,13 @@ class RouteProductDetails extends Component {
     }
 
     handlePurchase = (e) => {
-        e.preventDefault();
-        var user = this.state.user;
-        var data = {
-            purchaser_id: user
-        }
+    e.preventDefault();
+
+    var user_id = localStorage.getItem('userID')
+
+    var data = {
+      purchaser_id:user_id,
+    }
         var {
             id
         } = this.props;
@@ -68,7 +72,7 @@ class RouteProductDetails extends Component {
     }
 
     render() {
-        var {name,description,price,photo} = this.state.product
+        var {name,description,price,photos} = this.state.product
         var user = this.state.currentUser;
 
 
@@ -78,7 +82,7 @@ class RouteProductDetails extends Component {
                 <Card>
                     <Card.Body>
                         <Card.Title>{name}</Card.Title>
-                        <Card.Img variant="top" src={server + photo}/>
+                        <Card.Img variant="top" src={server + photos} onError={this.addDefaultSrc}/>
                         <Card.Text>{description}</Card.Text>
                         <Card.Text className="productPrice">${price}
                             {
@@ -101,7 +105,6 @@ class RouteProductDetails extends Component {
                     <Login
                         closeModal={this.closeLoginModal}
                         updateCurrentUser={this.updateCurrentUser}/>
-
                 </div>
             </Modal>
             <Modal
@@ -159,12 +162,36 @@ class RouteProductDetails extends Component {
                                  </Col>
                             </Form.Row>
                         </Form.Group>
+                        <Form.Group controlId="formGridAddress1">
+                        <Form.Row>
+                                <Col>
+                                    <Form.Label></Form.Label>
+                                    <Form.Control placeholder="Name on Card"/>
+                                </Col>
+                            </Form.Row>
+                            <Form.Row>
+                                <Col>
+                                    <Form.Label></Form.Label>
+                                    <Form.Control placeholder="Card Number"/>
+                                </Col>
+                            </Form.Row>
+                            <Form.Row>
+                                <Col>
+                                    <Form.Label></Form.Label>
+                                    <Form.Control placeholder="Expiry"/>
+                                </Col>
+                                <Col>
+                                    <Form.Label></Form.Label>
+                                    <Form.Control placeholder="cvv"/>
+                                </Col>
+                            </Form.Row>
+                        </Form.Group>
                         <Button
                             type="submit"
                             className="purchaseButton"
                             name="purchase"
                             variant="outline-dark">Purchase</Button>
-                    </Form>
+                        </Form>
                 </Container>
             </Modal>
             </>

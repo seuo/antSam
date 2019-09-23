@@ -10,8 +10,6 @@ import {
 	ToggleButtonGroup,
   } from 'react-bootstrap';
 
-import './App.css';
-
 class EditProduct extends Component{
   constructor(props){
 		super(props)

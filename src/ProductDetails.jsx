@@ -3,8 +3,6 @@ import React, {Component} from 'react';
 import Review from './Review';
 import {api, server} from './API';
 
-import './App.css';
-
 class RouteProductDetails extends Component{
   constructor(props){
     super(props);

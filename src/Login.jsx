@@ -22,6 +22,8 @@ class Login extends Component {
   }
   handleSubmitForm=(e)=>{
     e.preventDefault()
+    var today = new Date();
+    var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
     var form = new FormData(this.form);
     var data = {
         name: form.get("name-input"),
@@ -29,6 +31,7 @@ class Login extends Component {
         password: form.get("password-input"),
         email: form.get("email-input"),
         photo:'default.png',
+        date: date,
 
     }
     api.addUser(data).then(res => {

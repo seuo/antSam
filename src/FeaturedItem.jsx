@@ -5,8 +5,6 @@ import {Link, navigate} from '@reach/router';
 import {api, server} from './API';
 import {Card, Button, ListGroup} from 'react-bootstrap';
 
-import './App.css';
-
 class FeaturedItem extends Component{
   constructor(props){
     super(props);

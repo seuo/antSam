@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import { FiTriangle } from "react-icons/fi";
+import { FiChevronUp } from "react-icons/fi";
+import { MdHome } from "react-icons/md";
+import ScrollUpButton from "react-scroll-up-button"; //Add this line Here
 
 import {
     Nav,
@@ -64,7 +66,10 @@ render () {
         })}>
         <Container>
 
-          <Col className="lCol">© 2019 Threads</Col><Col className="linkColor" onClick={this.goHome}><FiTriangle/></Col><Col className="rCol"></Col>
+          <Col className="lCol">threads</Col><Col onClick={this.goHome} className="cCol linkColor"><MdHome/>
+          </Col><Col className="rCol linkColor"><ScrollUpButton ContainerClassName="ScrollUpButton__Container" TransitionClassName="ScrollUpButton__Toggled">
+            <FiChevronUp/>
+          </ScrollUpButton></Col>
 
         </Container>
         </Navbar>

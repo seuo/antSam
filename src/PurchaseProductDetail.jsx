@@ -2,9 +2,7 @@ import React, {Component} from 'react';
 import RouteProductDetails from './RouteProductDetails';
 import {Link, navigate} from '@reach/router';
 import {api, server} from './API';
-import {Card, Button, ListGroup,Media} from 'react-bootstrap';
-
-import './App.css';
+import {Card, Button, ListGroup,Media,Col} from 'react-bootstrap';
 
 class PurchaseProductDetail extends Component {
   constructor(props){
@@ -53,22 +51,26 @@ class PurchaseProductDetail extends Component {
 
           </Card.Body>
       </Card> */}
-      <ul className="list-unstyled">
+      <ul className="purchasesItem">
         <Media as="li" className="line">
             <img
             width={64}
             height={64}
             className="mr-3"
             src={server+photo}
-            alt="product"
             />
             <Media.Body className="mr-3">
-            <h5><Link to={'/products/'+id}>{name}</Link></h5>
-            <p className="price">${price}</p>
+            <Col>   
+              <h5><Link to={'/products/'+id}>{name}</Link></h5>
+              <p className="price">${price}</p>
+            </Col>
+            <Col>              
+              <Button variant="primary" type="submit">
+              <Link to={'/products/'+id}>   Review </Link></Button>
+            </Col>
             </Media.Body>
-            <Button variant="primary" type="submit">
-            <Link to={'/products/'+id}>   Review </Link></Button>
-            
+
+
             {/* 
             <p><Link to={'/products/'+id}>View</Link></p>
             */}

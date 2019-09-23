@@ -211,6 +211,16 @@ a {
   font-size: 1em;
 }
 
+.Item .card .card-body img {
+  display: block;
+  max-width: auto;
+  max-height: 13em;
+  width: auto;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 .Item .card .card-body .card-text {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -285,6 +295,48 @@ a {
   color: #bfbfbf;
   background-color: #343a40;
   border-color: #343a40;
+}
+
+.purchasesItem {
+  width: 100%;
+}
+
+.purchasesItem .media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.purchasesItem .media .media-body {
+  margin-right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  max-width: 100%;
+}
+
+.purchasesItem .media .media-body .col {
+  padding: 0;
+  max-width: 50%;
+  text-align: left;
+  overflow-wrap: break-word;
+}
+
+.purchasesItem .media .media-body .col p {
+  margin-bottom: 0;
 }
 
 .modalText {
@@ -490,7 +542,8 @@ a {
           justify-content: center;
   text-align: center;
   max-width: 50%;
-  padding: 1em;
+  padding: .5em 1em;
+  min-height: 5em;
 }
 
 .productsListing .col .card {
@@ -505,6 +558,26 @@ a {
       -ms-flex-pack: justify;
           justify-content: space-between;
   border: none;
+}
+
+.productsListing .col .card a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.productsListing .col .card a img {
+  display: block;
+  max-width: auto;
+  max-height: 6em;
+  width: auto;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .productsListing .col .card .card-body {
@@ -522,8 +595,11 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-top: 1em;
+  padding-top: .5em;
   margin: 0;
+  font-size: .9em;
+  font-weight: 100;
+  text-transform: capitalize;
 }
 
 .productsListing .col:nth-child(odd) {
@@ -538,6 +614,7 @@ a {
 
 .productsListing .col:first-child {
   border-bottom: solid thin #495158;
+  border-top: none;
 }
 
 .productsListing .col:last-child {
@@ -549,6 +626,11 @@ a {
 }
 
 .productsListing .col:nth-child(4n-6) {
+  border-bottom: solid thin #495158;
+}
+
+.productsListing .col:nth-child(2) {
+  border-top: none;
   border-bottom: solid thin #495158;
 }
 
@@ -697,7 +779,7 @@ a {
   background-color: #3f3f3f;
   color: #8c8c8c;
   font-size: .9em;
-  padding: .5em;
+  padding: .5em 1.5em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -721,10 +803,14 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  padding: 0;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 0em;
+}
+
+.footer .cCol svg {
+  font-size: 1.8em;
 }
 
 .footer .rCol {
@@ -750,7 +836,7 @@ a {
 }
 
 .footer svg {
-  font-size: 1.5em;
+  font-size: 3em;
   stroke-width: 1;
 }
 
@@ -990,10 +1076,43 @@ a {
 }
 
 .loginModal .loginForm button {
-  background-color: #3f3f3f;
+  background-color: #f2f2f2;
   border: none;
   color: #A68B3C;
   border-bottom: thin solid #A68B3C;
+  border-radius: 0;
+}
+
+.purchaseForm {
+  padding: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.purchaseForm input {
+  border: none;
+  border-bottom: solid thin #495158;
+  border-radius: 0;
+}
+
+.purchaseForm button {
+  background-color: #f2f2f2;
+  border: none;
+  color: #A68B3C;
+  border-bottom: thin solid #A68B3C;
+  border-radius: 0;
+}
+
+.purchaseForm .form-group {
+  margin-bottom: 0;
 }
 
 .section {
@@ -1080,11 +1199,13 @@ a {
 .section .FilterCat .card-header .backArrow {
   position: absolute;
   left: 0.2em;
-  width: 3.5em;
-  padding-top: .3em;
-  position: absolute;
   font-size: 1.5em;
+  color: #A68B3C;
+}
+
+.section .FilterCat .card-header .backArrow svg {
   stroke-width: 1;
+  font-size: 1.5em;
 }
 
 .section .container {
