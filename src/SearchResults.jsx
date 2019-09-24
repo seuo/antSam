@@ -7,7 +7,7 @@ import {
 
 function SearchResults(props){
     let results = props.searchedItems.map((item, i)=> {
-        return <Item key={item.id} name={item.name} purchaser_id={item.purchaser_id}/>
+        return <Item key={item.id} name={item.name} price={item.price} purchaser_id={item.purchaser_id}/>
 
     })
     return (

@@ -14,7 +14,9 @@ import RouteCat from './RouteCategory';
 import RouteThanks from './RouteThanks';
 import RouteFeaturedProduct from './RouteFeaturedProduct';
 import Footer from './Footer';
-import ProductSearch from './ProductSearch';
+import RouteProductSearch from './RouteProductSearch';
+import RouteOurStore from './RouteOurStore';
+import UserNav from './UserNav';
 
 import {
   Accordion,Nav,Navbar,Container,Card,Image,Row,NavDropdown,Popover,Button,ButtonToolbar,OverlayTrigger
@@ -26,10 +28,6 @@ import 'react-multi-carousel/lib/styles.css';
 import { FiChevronDown,FiChevronLeft,FiSearch  } from "react-icons/fi";
 import { IoIosArrowRoundBack,IoIosClose,IoIosAdd } from "react-icons/io";
 import {api,server} from './API';
-
-
-
-
 
 class App extends Component{
   constructor(props){
@@ -67,6 +65,8 @@ goBack = (e) => {
     window.history.back()
 }
 
+
+
 componentDidMount=()=>
 {
 
@@ -85,8 +85,7 @@ componentDidMount=()=>
       
     return(
 
-
-      <div className="wrap">
+      <div className="wrap" onClick={this.handleNavCollapse}>
 
     <Container className="modalStyle">
         <Modal
@@ -135,30 +134,7 @@ componentDidMount=()=>
                      
                       {
                           this.state.currentUser ? (
-                          <>
-                          
-                          <Navbar.Toggle className="userControl" aria-controls="responsive-navbar-nav"> 
-                          <Image className="navbar-default"src={server+this.state.currentUser.photo} thumbnail={true} />
-                          </Navbar.Toggle>
-
-                          <Navbar.Collapse id="responsive-navbar-nav" >
-                          
-                              <Nav className="mr-auto" >
-                              <Nav.Link href="/products/new"><IoIosAdd/> Sell an Item</Nav.Link>
-                              <Nav.Link href="/user-profile">User Profile</Nav.Link>
-                              <Nav.Link href="/products">My Products</Nav.Link>
-                              {/* <Nav.Link href="#watchlist">Watch List</Nav.Link> */}
-                              <Nav.Link href="/my-reviews">My Reviews</Nav.Link>
-                              <Nav.Link href="/purchases">Purchase Products</Nav.Link>
-                              <input
-                            className="loginButton"
-                            type="button"
-                            value="Logout"
-                            onClick={this.handleLogOut}/>
-                              </Nav>
-                            
-                          </Navbar.Collapse>
-                          </>
+                            <UserNav currentUser={this.state.currentUser}/>
                           ) : null
                       }
               </Container>
@@ -189,7 +165,7 @@ componentDidMount=()=>
               </Accordion>
           </div>
           <Router>
-            <ProductSearch path="/search"/>
+            <RouteProductSearch path="/search"/>
             <ProductListings path="/"/>
             <RouteCat path="/categories/:id"/>
             { this.state.currentUser ?<UserProducts path="/products" user={this.state.currentUser}/> : null}
@@ -202,6 +178,7 @@ componentDidMount=()=>
             { this.state.currentUser ? <UserProfile path="/user-profile" user={this.state.currentUser} updateCurrentUser={this.updateCurrentUser}/> : null}
             <RouteFeaturedProduct path="/featured"/>
             <Products path="/products"/>
+            <RouteOurStore path="/our-store"/>
           </Router>
  
           </div>

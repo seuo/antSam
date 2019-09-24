@@ -11,7 +11,7 @@ import {
 
 
 
-class ProductSearch extends Component {
+class RouteProductSearch extends Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -58,4 +58,4 @@ class ProductSearch extends Component {
       }
     }
 
-    export default ProductSearch;
+    export default RouteProductSearch;

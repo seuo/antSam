@@ -172,6 +172,18 @@ a {
   background-color: transparent;
 }
 
+.Item .card .itemPrice {
+  color: #3f3f3f;
+  font-size: .8em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-bottom: .5em;
+}
+
 .Item .card .card-img-featured {
   padding: 0;
   width: 75vw;
@@ -580,6 +592,18 @@ a {
      object-fit: contain;
 }
 
+.productsListing .col .card a .itemPrice {
+  color: #3f3f3f;
+  font-size: .8em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-bottom: .5em;
+}
+
 .productsListing .col .card .card-body {
   padding: 0;
 }
@@ -595,7 +619,7 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-top: .5em;
+  padding-top: .7em;
   margin: 0;
   font-size: .9em;
   font-weight: 100;

@@ -36,17 +36,20 @@ class Item extends Component{
 
 
   render(){
-    var {name, photos, id} = this.props;
+    var {name, photos, id, price} = this.props;
 
     return(
       
       this.state.purchaser_id ? null : (
         <Col>
           <Card>
-          <Link to={'/products/'+id}><Card.Img variant="top" src={server+photos} onError={this.addDefaultSrc}/> 
+          <Link to={'/products/'+id}>
+          <Card.Text className="itemPrice">${price}</Card.Text>
+            <Card.Img variant="top" src={server+photos} onError={this.addDefaultSrc}/> 
               <Card.Body>
-                  <Card.Title><Link to={'/products/'+id}>{name}</Link>
-                  </Card.Title>
+              <Card.Title><Link to={'/products/'+id}>{name}</Link>
+              </Card.Title>
+              
               </Card.Body></Link>
           </Card>
         </Col>)

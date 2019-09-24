@@ -193,19 +193,19 @@ class ProductListings extends Component {
                 <Container className="imageGrid">
                     <Row>
                         <Jumbotron fluid="fluid">
-                            <Container>
+                        <Link to="/our-store"><Container>
                                 <h1>Our Store</h1>
                                 <p>
                                     We stock a huge range of new & second hand trade in's. We check the listing matches
-                                    the product for quality assurance.
+                                    the product for quality assurance, verify and then list.
                                 </p>
-                            </Container>
+                            </Container></Link>
                         </Jumbotron>
 
                     </Row>
                     <Row>
-                        <Col><Image src="/accessories.jpg" fluid="fluid"/></Col>
-                        <Col><Image src="/suits.jpg" fluid="fluid"/><Image src="/footwear.jpg" fluid="fluid"/></Col>
+                        <Col><Link to="/categories/accessories"><Image src="/accessories.jpg" fluid="fluid"/></Link></Col>
+                        <Col><Link to="/categories/suits"><Image src="/suits.jpg" fluid="fluid"/></Link><Link to="/categories/footwear"><Image src="/footwear.jpg" fluid="fluid"/></Link></Col>
                     </Row>
                 </Container>
             </div>

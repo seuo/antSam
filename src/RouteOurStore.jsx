@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Link, navigate} from '@reach/router';
 import {Image, Col, Container, Row, Jumbotron, Card, Nav, Button, ListGroup} from 'react-bootstrap';
 
-class OurStore extends Component{
+class RouteOurStore extends Component{
   constructor(props){
     super(props);
   }
@@ -14,7 +14,8 @@ class OurStore extends Component{
         <Container className="NoPad">
             <Row className="container">
                 <h3>Our Store</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum volutpat orci eget enim imperdiet sollicitudin. 
+                <p> We stock a huge range of new & second hand trade in's. We check the listing matches
+                  the product for quality assurance, verify and then list.
                 </p>
                 <p>Duis elit nunc, congue sit amet porta sed, faucibus id massa. Aliquam consequat faucibus odio, vel sagittis neque dictum sed. Curabitur ut finibus eros, ac tempor sapien.
                 </p>
@@ -31,4 +32,4 @@ class OurStore extends Component{
   }
 }
 
-export default OurStore;
+export default RouteOurStore;
