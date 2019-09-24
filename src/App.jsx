@@ -174,25 +174,8 @@ componentDidMount=()=>
                       <span onClick={this.goBack} className="backArrow" to="/"><FiChevronLeft/></span>
                           <Accordion.Toggle as={Card.Header} eventKey="0">
                           <h5>CATAGORIES</h5><FiChevronDown/>
-                    <ButtonToolbar>
-                            {['bottom'].map(placement => (
-                              <OverlayTrigger
-                                trigger="click"
-                                key={placement}
-                                placement={placement}
-                                overlay={
-                                  <Popover id={`popover-positioned-${placement}`}>
-                                    <Popover.Title as="h3"><ProductSearch/></Popover.Title>
-                                  </Popover>
-                                }
-                              >
-                                <Button variant="secondary"><FiSearch/></Button>
-                              </OverlayTrigger>
-                            ))}
-                          </ButtonToolbar>
-                          
                           </Accordion.Toggle>
-                          
+                          <Link to="/search" ><FiSearch className="searchIcon"/></Link>
                       </Card.Header>
                       <Accordion.Collapse eventKey="0">
                         <Nav className="browseNav" variant="pills" defaultActiveKey="/home">
@@ -206,6 +189,7 @@ componentDidMount=()=>
               </Accordion>
           </div>
           <Router>
+            <ProductSearch path="/search"/>
             <ProductListings path="/"/>
             <RouteCat path="/categories/:id"/>
             { this.state.currentUser ?<UserProducts path="/products" user={this.state.currentUser}/> : null}

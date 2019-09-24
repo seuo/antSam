@@ -48,8 +48,9 @@ class ProductSearch extends Component {
                 <Row className="searchBox">
                 <SearchBox handleInput={this.handleInput}/>
                 </Row>
-                <Row className="searchResults">
+                <Row className="searchResults">  
                 <SearchResults searchedItems={searchResults}/>
+                <Container className="noResults">Sorry, there are no products that match your search term</Container>
                 </Row>
             </Container>
             

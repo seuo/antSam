@@ -1,9 +1,13 @@
 import React, {Component} from 'react';
 import Item from './Item';
 
+import {
+    Container
+} from 'react-bootstrap';
+
 function SearchResults(props){
     let results = props.searchedItems.map((item, i)=> {
-        return <Item key={i} name={item.name}/>
+        return <Item key={item.id} name={item.name} purchaser_id={item.purchaser_id}/>
 
     })
     return (
