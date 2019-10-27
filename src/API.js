@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// var url = 'http://10.2.24.18:4001/api';
-// var server = 'http://10.2.24.18:4001/';
+// var url = 'http://10.2.24.48:4001/api';
+// var server = 'http://10.2.24.48:4001/';
 
 var url = 'http://localhost:4001/api';
 var server = 'http://localhost:4001/';
@@ -65,19 +65,15 @@ var api = {
     updateUser: (id,data) => {
         return axios.put(url+'/users/'+id,data)
      },
+    deleteUser: (id) => {
+        return axios.delete(url+'/users/'+id)
+    },
 
     addReview : (data) => {
-        return axios.get(url+'/reviews',data)
+        return axios.post(url+'/reviews',data)
     },
     
-    // updateReview : (id,data) => {
-    //     return axios.get(url+'/review/'+id,data)
-    // },
-    
-    deleteReview : (id) => {
-        return axios.delete(url+'/reviews/'+id)
-    },
-    
+
 }
 
 

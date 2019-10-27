@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
 @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei&display=swap");
 /* Color Theme Swatches in RGBA */
 * {
   margin: 0;
@@ -22,6 +23,15 @@ h1, h2, h3, h4, h5 {
 h1 {
   font-size: 2em;
   margin-top: .3em;
+}
+
+.container {
+  padding: 0;
+}
+
+.row {
+  padding: 0;
+  margin: 0;
 }
 
 a {
@@ -159,6 +169,15 @@ a {
   padding-top: 1em;
 }
 
+.Item .carousel-item-next, .Item .carousel-item-prev, .Item .carousel-item.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .Item .card {
   border: 0;
   margin-top: 0.2em;
@@ -170,18 +189,6 @@ a {
       -ms-flex-pack: end;
           justify-content: flex-end;
   background-color: transparent;
-}
-
-.Item .card .itemPrice {
-  color: #3f3f3f;
-  font-size: .8em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  margin-bottom: .5em;
 }
 
 .Item .card .card-img-featured {
@@ -203,11 +210,49 @@ a {
   -webkit-box-flex: 0;
       -ms-flex: 0;
           flex: 0;
-  padding: 1em 0 0;
+  padding: 0em;
+}
+
+.Item .card .card-body .productDetailsInfo.col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1em 2em;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.Item .card .card-body .productDetailsInfo.col p {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 0em 2em;
 }
 
 .Item .card .card-body h5 {
   text-align: center;
+}
+
+.Item .card .card-body .col-3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0em;
+  width: 6em;
+  margin-left: 1em;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .Item .card .card-body .card-title {
@@ -352,25 +397,140 @@ a {
 }
 
 .modalText {
-  padding: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
+}
+
+.modalText h6 {
+  padding: 0em;
+  margin-top: 1em;
+}
+
+.deleteModal {
+  color: #8c8c8c;
+  border: none;
+  border-bottom: #495158;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.deleteModal span {
+  justify-self: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1em;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  color: #0c0c0c;
+}
+
+.deleteModal span a {
+  color: #495158;
+  font-size: 1.5em;
+}
+
+.deleteModal span a span {
+  padding: 0em;
+}
+
+.deleteModal h3 {
+  font-size: 1.3em;
+  padding: 1em;
+}
+
+.deleteModal .buttons {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 5em;
+}
+
+.deleteModal button {
+  background-color: #f2f2f2;
+  border: none;
+  color: #0c0c0c;
+  border-bottom: thin solid #A68B3C;
+  border-radius: 0;
+}
+
+.addPhoto {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1em;
+}
+
+.deleteButton {
+  position: absolute;
+  z-index: 10;
+  color: black;
+  right: 1em;
+  top: 1em;
+  font-size: 1.2em;
+}
+
+.productImage {
+  width: 100%;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+}
+
+.carousel-inner {
+  background-color: #f2f2f2;
+}
+
+.carousel-indicators {
+  margin-bottom: 0;
+  height: .9em;
+}
+
+.Item .card .card-body .productImage img {
+  display: block;
+  max-width: inherit;
+  max-height: 13em;
+  width: inherit;
+  height: inherit;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.formGridPrice {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-.modalText h6 {
-  padding: 0em;
-  margin: 0em;
 }
 
 .react-multi-carousel-item {
@@ -381,11 +541,15 @@ a {
 
 .carousel-container {
   background-color: #f2f2f2;
-  width: 100vw;
+  width: 100%;
 }
 
 .carousel-container2 {
   background-color: #fcfcfc;
+}
+
+.react-multi-carousel-item .Item {
+  margin-left: 0.4em;
 }
 
 .custom-dot-list-style {
@@ -710,6 +874,375 @@ a {
   position: absolute;
 }
 
+.navBarbot:nth-child(2) {
+  position: absolute;
+  right: 1.2em;
+  width: 2em;
+  height: 2em;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.adminToggle {
+  width: 39px;
+  height: 39px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.dropdown {
+  position: absolute;
+  right: 1.5em;
+}
+
+.dropdown .navbar-default {
+  background-color: transparent;
+  border: none;
+  max-width: 2em;
+  padding: 0;
+}
+
+.dropdown .navbar-default img {
+  display: block;
+  max-width: 8em;
+  max-height: auto;
+  width: auto;
+  height: auto;
+  margin-left: -50%;
+  margin-top: -50%;
+}
+
+.dropdown-menu {
+  position: absolute;
+  will-change: transform;
+  top: 0em;
+  right: 0px;
+  z-index: 0;
+  -webkit-transform: translate3d(0em, 0em, 0px);
+          transform: translate3d(0em, 0em, 0px);
+  width: 12em;
+}
+
+.dropdown-menu.show {
+  -webkit-transform: translate3d(-8.5em, 1em, 0px) !important;
+          transform: translate3d(-8.5em, 1em, 0px) !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: right;
+  margin-left: 0em !important;
+  width: 12em;
+  -webkit-transition: ease all .5s;
+  transition: ease all .5s;
+  padding: .5em;
+  padding-right: 2em;
+  background-color: #343a40;
+  z-index: 2;
+  margin-top: 1.5em;
+  border: none;
+}
+
+.dropdown-menu.show a {
+  color: #bfbfbf;
+  margin-top: .5em;
+  font-size: 1.05em;
+  margin-right: .2em;
+}
+
+.dropdown-menu.show input {
+  background-color: transparent;
+  color: #3f3f3f;
+  border-radius: .1em;
+  border: none;
+  border-bottom: thin solid #495158;
+  color: #8c8c8c;
+  text-align: center;
+  padding: .2em .5em;
+  margin-top: .4em;
+  width: 7em;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  border: solid thin;
+  cursor: pointer;
+  font-size: 1.1em !important;
+  margin-bottom: 1em;
+}
+
+.nav-tabs {
+  border-bottom: 1px solid #dee2e6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-size: .9em;
+  padding: .5em;
+}
+
+#uncontrolled-tab-example-tab-Sold {
+  margin-right: 60%;
+}
+
+.userAdminDetails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.userAdminDetails .col-md-3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.userAdminDetails .col-md-3 .editImgButton {
+  background-color: #f2f2f200;
+  border: none;
+  color: #000000;
+  height: 3em;
+  border-bottom: thin solid #A68B3C;
+  border-radius: 0;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 0em;
+  margin-left: 0;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 3em;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.userAdminDetails .userImageUpdate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-flex: inherit;
+      -ms-flex: inherit;
+          flex: inherit;
+}
+
+.userAdminDetails .userImageUpdate input.editImgButton {
+  background-color: #f2f2f2;
+  border: none;
+  color: #A68B3C;
+  border-bottom: thin solid #A68B3C;
+  border-radius: 0;
+  margin-top: 4em;
+  position: absolute;
+  margin-left: .8em;
+  width: 4em;
+}
+
+.userAdminDetails .userImageUpdate .user-photo {
+  -webkit-box-flex: inherit;
+      -ms-flex: inherit;
+          flex: inherit;
+  width: 6em;
+  height: 6em;
+  max-width: 6em;
+  max-height: 6em;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-left: 1.5em;
+  padding: 0;
+}
+
+.userAdminDetails .userImageUpdate .user-photo img {
+  display: block;
+  max-width: 8em;
+  max-height: auto;
+  width: 8em;
+  height: auto;
+  margin-left: -1em;
+}
+
+.userInfo {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.userInfo p {
+  margin-bottom: .5em;
+}
+
+.mr-3 p, .mx-3 p {
+  margin-bottom: .2em;
+}
+
+.userItem .card .card-body .productImage img {
+  display: block;
+  max-width: auto;
+  max-height: 10em;
+  width: auto;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  max-width: 100%;
+}
+
+.userItem .card .card-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1;
+          flex: 0 1;
+  padding: 1em 2em;
+}
+
+.userItem .card .card-body .carousel {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.userItem .card .card-body .carousel .carousel-inner {
+  background-color: #f2f2f2;
+}
+
+.userItem .card .card-body .carousel .carousel-indicators li {
+  background-color: #8c8c8c;
+}
+
+.userItem .list-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: col;
+          flex-direction: col;
+  padding-left: 0;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-bottom: 0;
+  border-bottom: thin #bfbfbf solid;
+  padding: .1em;
+}
+
+.userItem .list-group .list-group-item {
+  position: relative;
+  display: block;
+  padding: .65em 1em;
+  margin-bottom: -1px;
+  background-color: #fff;
+  border-top: none;
+}
+
+.userItem .list-group .prodName {
+  max-width: 35vw;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.editForm .col-8 {
+  width: 6em;
+  height: 6em;
+  max-width: 6em;
+  max-height: 6em;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-left: 1.5em;
+  margin: 1em;
+  padding: 0;
+}
+
+.editForm .col-8 .img-thumbnail {
+  display: block;
+  max-width: 8em;
+  max-height: auto;
+  width: 8em;
+  height: auto;
+  margin-left: -1em;
+  margin-top: 0;
+}
+
+.editForm .userProfile .form-group input#Userphoto-input {
+  margin-left: 1em;
+}
+
+.editForm .userProfile .formPhoto {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.editForm .userProfile .formPhoto img {
+  display: block;
+  max-width: auto;
+  max-height: 13em;
+  width: auto;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.col-3 .sellerId {
+  position: absolute;
+  margin-top: -.5em;
+}
+
+.col-3 .sellerPhoto {
+  width: 3em;
+  height: 3em;
+  max-width: 3em;
+  max-height: 3em;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-left: 1.5em;
+  margin: 1em;
+  padding: 0;
+  margin-bottom: 3em;
+}
+
+.col-3 .sellerPhoto img {
+  display: block;
+  max-width: 3.3em;
+  max-height: auto;
+  width: 3.3em;
+  height: auto;
+  margin-left: -.2em;
+  margin-top: -.2em;
+  border: none;
+}
+
 .reviewForm {
   padding: 1em;
   display: -webkit-box;
@@ -755,6 +1288,27 @@ a {
 .addReview {
   background-color: #f2f2f2;
   border-top: thin solid #bfbfbf;
+}
+
+.listings .Item {
+  -webkit-box-align: stretch !important;
+      -ms-flex-align: stretch !important;
+          align-items: stretch !important;
+}
+
+.Item .card .card-body .card-text {
+  -webkit-box-pack: normal;
+      -ms-flex-pack: normal;
+          justify-content: normal;
+}
+
+.Item .card .card-body .card-text .tag_product {
+  font-weight: bold;
+  padding-right: 1em;
+}
+
+.Item .card .card-body .first_cardText {
+  margin-top: 2em;
 }
 
 .imageGrid {
@@ -817,7 +1371,7 @@ a {
   transition: top 0.6s;
   -webkit-transition: ease all .3s;
   transition: ease all .3s;
-  z-index: 9;
+  z-index: 50;
 }
 
 .footer .lCol {
@@ -831,10 +1385,13 @@ a {
       -ms-flex-pack: start;
           justify-content: flex-start;
   padding: 0em;
+  font-family: 'ZCOOL XiaoWei', serif;
+  font-size: 1.2em;
 }
 
 .footer .cCol svg {
   font-size: 1.8em;
+  color: #fcfcfc;
 }
 
 .footer .rCol {
@@ -862,6 +1419,7 @@ a {
 .footer svg {
   font-size: 3em;
   stroke-width: 1;
+  color: #fcfcfc;
 }
 
 .footer--hidden {
@@ -935,6 +1493,20 @@ a {
   border-bottom: none;
 }
 
+.searchBox {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.searchBox .form-inline .form-control {
+  width: 100vw;
+}
+
+.searchBox .form-inline .form-control input {
+  width: 100vw;
+}
+
 .searchBox input {
   width: 100vw;
   border-radius: 0;
@@ -957,6 +1529,7 @@ a {
 .noResults {
   position: absolute;
   z-index: -1;
+  max-width: 550px;
   padding-top: 1em;
 }
 
@@ -969,16 +1542,17 @@ a {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 100vh;
-}
-
-.wrap .react-multi-carousel-track {
-  margin-left: 3.5em;
-  margin-bottom: 1em;
+  overflow: hidden;
+  padding-right: 0;
+  padding-left: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .Header {
   position: relative;
   z-index: 9;
+  height: 5em;
 }
 
 .Header .navBarbot {
@@ -1101,7 +1675,7 @@ a {
 .Header .Logo {
   padding-top: .5em;
   padding-bottom: .5em;
-  width: 9em;
+  width: 5em;
   padding-right: .5em;
 }
 
@@ -1112,7 +1686,7 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100vw;
+  width: 100%;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
@@ -1363,60 +1937,12 @@ a {
   margin: 0;
 }
 
-@media (min-width: 576px) {
-  .navBarbot button.navbar-toggler {
-    position: absolute;
-    top: 6em !important;
-    right: 2em;
-    border-radius: 3em;
-    height: 2.7em;
-  }
-  .section .items {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    overflow: scroll;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 0 70%;
-            flex: 1 0 70%;
-  }
+.Item .card .card-img-featured {
+  padding: 0;
+  width: 19em;
 }
 
-@media (min-width: 768px) {
-  .wrap .Header .navBarbot {
-    width: 80%;
-  }
-}
-
-@media (min-width: 992px) {
-  .wrap .Header .Navbar {
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .wrap .Header .navBarbot {
-    width: 25em;
-  }
-  .wrap .Header .navBarbot div#responsive-navbar-nav {
-    position: relative;
-    right: 0;
-    text-align: right;
-    background-color: #343a40;
-    padding: 1em;
-    top: 10em;
-    z-index: 999;
-  }
+li.react-multi-carousel-item.CarousalItem.carousel-item-padding-40-px {
+  width: 100% !important;
 }
 /*# sourceMappingURL=App.css.map */

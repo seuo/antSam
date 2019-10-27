@@ -9,11 +9,13 @@
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
     "node-sass": "^4.12.0",
-    "react": "^16.9.0",
+    "react": "^16.11.0",
     "react-awesome-modal": "^2.0.5",
     "react-bootstrap": "^1.0.0-beta.12",
-    "react-dom": "^16.9.0",
+    "react-custom-scrollbars": "^4.2.1",
+    "react-dom": "^16.11.0",
     "react-filter-search": "^1.0.8",
+    "react-form-validator-core": "^0.6.4",
     "react-icons": "^3.7.0",
     "react-multi-carousel": "^2.2.5",
     "react-responsive-modal": "^4.0.1",
@@ -21,6 +23,7 @@
     "react-scripts": "3.1.1",
     "react-scroll-up-button": "^1.6.4",
     "react-svg-buttons": "^0.4.0",
+    "reactstrap": "^8.1.1",
     "sass-google-fonts": "^1.0.1"
   },
   "scripts": {

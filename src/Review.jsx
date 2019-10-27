@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 // import {Link, navigate} from '@reach/router'
-import {Form, Button, ListGroup} from 'react-bootstrap';
+import {Form} from 'react-bootstrap';
 import {api} from './API';
 
 class Review extends Component {
@@ -23,64 +23,44 @@ class Review extends Component {
 
         var {
             review,
-            currentUser
         } = this.props
-        console.log(review)
         return (
 
-	<Form className="reviewForm">
+	    <Form className="reviewForm">
 			<h3>Product Review</h3>
 
 			<Form.Group controlId="formGridFile">
-					<Form.Label>Comment: {review.comment}
+					<Form.Label>Comment: {review.comment }
 					</Form.Label>
 			</Form.Group>
 			<Form.Group controlId="formGridFile">
-					<Form.Label>Rating: {review.rating} Star
+					<Form.Label>
+                    Rating:
+                        {(() => {
+                        switch (review.rating) {
+                        case 1:   return "★";
+                        case 2: return "★★";
+                        case 3:  return "★★★";
+                        case 4:  return "★★★★";
+                        case 5:  return "★★★★★";
+                        default:      return "";
+                        }
+                    })()}
 					</Form.Label>
 			</Form.Group>
 			<Form.Group controlId="formGridFile">
-                    <Form.Label>Review by: {currentUser}
-                    {/* {
-								currentUser
-									? currentUser
-									: null
-							} */}
+                    <Form.Label>Review by: {review.user ? review.user.name : null}
+                
 					</Form.Label>
 			</Form.Group>
 
-			<Button
+			{/* <Button
                             className="AddButton"
                             data-reviewid={review.id}
-                            onClick={this.handleTrashClick}>Delete</Button>
-			</Form>
+                            onClick={this.handleTrashClick}>Delete</Button> */}
+		</Form>
 
-            // <div className="card review">
-            //     <div className="card-body">
-            //         <p className="card-text">{review.comment}</p>
-            //         <p className="card-text">Rating: {review.rating}</p>
-            //         <p className="card-text">Review by: {
-            //                 review.user
-            //                     ? review.user.name
-            //                     : 'anonymous'
-            //             }</p>
-            //         <div className="buttons">
-            //             <Button
-            //                 className="AddButton"
-            //                 data-reviewid={review.id}
-            //                 onClick={this.handleTrashClick}>Delete</Button>
-            //         </div>
-            //         {/* <p>
-		    //         {
-		    //          	(currentUser && currentUser.id == review.user_id) ? (
-		    //             	<i data-reviewid={review.id} onClick={this.handleTrashClick} className="fas fa-trash"></i>
-		    //           	) : null
-	    	// 		}
-		    //         </p> */
-            //         }
-            //     </div>
-            // </div>
-        );
+        )
     }
 }
 

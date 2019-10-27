@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 @import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei&display=swap');
  
 
 /* Color Theme Swatches in RGBA */
@@ -34,7 +35,14 @@ h1 {
     margin-top: .3em;
 }
 
+.container {
+    padding:0;
+}
 
+.row {
+    padding:0;
+    margin:0;
+}
 
 a {
     color:$link-color;
@@ -82,19 +90,33 @@ a {
 @import "_footer.scss";
 @import "_searchList.scss";
 
+// .wrap {
+//     display: flex;
+//     flex-direction: column;
+//     height:100vh;
+//     .react-multi-carousel-track {
+//     margin-left: 3.5em;
+//     margin-bottom:1em;
+//     }
+// }
+
 .wrap {
     display: flex;
     flex-direction: column;
-    height:100vh;
-    .react-multi-carousel-track {
-    margin-left: 3.5em;
-    margin-bottom:1em;
-    }
+    height: 100vh;
+    overflow: hidden;
+    padding-right: 0;
+    padding-left: 0;
+    margin-left:0;
+    margin-right:0;
 }
+
+
 
 .Header {
     position:relative;
     z-index: 9;
+    height: 5em;
     .navBarbot {
         width: 100%;
         display: flex;
@@ -194,13 +216,13 @@ a {
     .Logo {
         padding-top: .5em;
         padding-bottom: .5em;
-        width: 9em;
+        width: 5em;
         padding-right: .5em;
     }
     .Navbar {
         justify-content: center;
         display:flex;
-        width:100vw;
+        width:100%;
         // justify-content: space-around;
         align-items: flex-end;
         padding-left: 2em;
@@ -408,56 +430,87 @@ a {
 
 
 
+
+.Item .card .card-img-featured {
+    padding: 0;
+    width: 19em;
+}
+
+
+li.react-multi-carousel-item.CarousalItem.carousel-item-padding-40-px {
+    width: 100% !important;
+}
+
+
+// @media (min-width: 550px) {
+//     .Header .navBarbot div#responsive-navbar-nav {
+//         position: absolute !important;
+//         right: 0 !important;
+//         text-align: right !important;
+//         background-color: #343a40;
+//         padding: 2em !important;
+//         top: 4em !important;
+//         z-index: 999 !important;
+//     }
+
+
+// }
+
+
+
 // // Extra small devices (portrait phones, less than 576px)
 // @media (max-width: 575.98px) { ... }
 
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {            
-    .navBarbot button.navbar-toggler {
-    position: absolute;
-    top: 6em !important;
-    right: 2em;
-    border-radius: 3em;
-    height: 2.7em;
-    } 
+@media (min-width: 576px) {         
+    
 
-    .section .items {
-        display: flex;
-        flex-direction: row;
-        overflow: scroll;
-        justify-content: flex-start;
-        align-items: center;
-        flex: 1 0 70%;
-    }
+    // .navBarbot button.navbar-toggler {
+    // position: absolute;
+    // top: 6em !important;
+    // right: 2em;
+    // border-radius: 3em;
+    // height: 2.7em;
+    // } 
+
+    // .section .items {
+    //     display: flex;
+    //     flex-direction: row;
+    //     overflow: scroll;
+    //     justify-content: flex-start;
+    //     align-items: center;
+    //     flex: 1 0 70%;
+    // }
+
 }
 
 // // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) { 
-    .wrap .Header .navBarbot {
-        width: 80%;
-    }
- }
+// @media (min-width: 768px) { 
+//     .wrap .Header .navBarbot {
+//         width: 80%;
+//     }
+//  }
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px)  { 
-    .wrap .Header .Navbar {
-        justify-content: space-around;
-        align-items: center;
-    }        
-    .wrap .Header .navBarbot {
-        width: 25em;
-    }
+// // Large devices (desktops, 992px and up)
+// @media (min-width: 992px)  { 
+//     .wrap .Header .Navbar {
+//         justify-content: space-around;
+//         align-items: center;
+//     }        
+//     .wrap .Header .navBarbot {
+//         width: 25em;
+//     }
 
-    .wrap .Header .navBarbot div#responsive-navbar-nav {
-        position: relative;
-        right: 0;
-        text-align: right;
-        background-color: #343a40;
-        padding: 1em;
-        top: 10em;
-        z-index: 999;
-    }
-}
+//     .wrap .Header .navBarbot div#responsive-navbar-nav {
+//         position: relative;
+//         right: 0;
+//         text-align: right;
+//         background-color: #343a40;
+//         padding: 1em;
+//         top: 10em;
+//         z-index: 999;
+//     }
+// }
 // .photo-input{
 //     width: 0.1px;
 // 	height: 0.1px;

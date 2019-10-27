@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import Review from './Review';
 import {api, server} from './API';
 
-class RouteProductDetails extends Component{
+class ProductDetails extends Component{
   constructor(props){
     super(props);
     this.state = {
@@ -37,6 +37,12 @@ class RouteProductDetails extends Component{
       this.routeGetProduct(productId)
     })
   }
+
+  addDefaultSrc(ev){
+    ev.target.src = '/coming-soon.png'
+  }
+
+
   render(){
     var {product} = this.state;
 
@@ -46,7 +52,7 @@ class RouteProductDetails extends Component{
         <h2 className="name text">{product.name}</h2>
         <p className="description text">{product.description}</p>
         <p className="price text">{product.price}</p>
-        <img className="photo" src={server+product.photo}/>
+        <img className="photo" src={server+product.photo} onError={this.addDefaultSrc}/> 
         {
           product.reviews.map(review => {
             var reviewProps = {
@@ -64,4 +70,4 @@ class RouteProductDetails extends Component{
   }
 }
 
-export default RouteProductDetails;
+export default ProductDetails;

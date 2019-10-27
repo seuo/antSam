@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import Item from './Item';
-import {api, server} from './API';
+import {api} from './API';
 import {
     Container,
     Row,
-    Col,
   } from 'react-bootstrap';
 
 class RouteCat extends Component {
@@ -43,7 +42,7 @@ class RouteCat extends Component {
                 <Row className="productsListing">
                 
                     {
-                        category.products.map((item) => {
+                        category.products.reverse().map((item) => {
                             var itemProps = {
                                 ...item,
                                 key:item.id,

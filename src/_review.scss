@@ -37,3 +37,34 @@
     background-color:$color-1;
     border-top:thin solid $color-2;
 }
+
+.listings 
+{
+    .Item
+    {
+        align-items: stretch !important;
+    }
+}
+.Item 
+{
+    .card 
+    {
+        .card-body 
+        {
+            .card-text
+            {
+                justify-content: normal;
+                .tag_product 
+                {
+                    font-weight: bold;
+                    padding-right: 1em;
+                }
+                
+            }
+            .first_cardText
+            {
+                margin-top: 2em;
+            }
+        }
+    }
+}

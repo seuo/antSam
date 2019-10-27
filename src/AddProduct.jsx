@@ -1,22 +1,17 @@
 import React, {Component} from 'react';
-import {Router, Link, navigate} from '@reach/router';
+import {navigate} from '@reach/router';
 import {api} from './API';
 
 
 import {
-	Col,
 	Button,
-	Form,
-	ToggleButton,
-	ToggleButtonGroup,
+	Form
   } from 'react-bootstrap';
 
 import './App.css';
 
 class AddProduct extends Component{
-  constructor(props){
-		super(props)
-	}
+
 
 	
 	
@@ -27,7 +22,6 @@ class AddProduct extends Component{
 
 		api.uploadPhotos(form).then(res => {
 			var files = res.data
-			console.log(files);
 
 			var data = {
 				name: form.get('name-input'),
@@ -37,8 +31,11 @@ class AddProduct extends Component{
 				seller_id: this.props.user.id,
 				photos: files,
 			}
-			api.addProduct(data).then(navigate('/products'));
-			console.log(data);
+			api.addProduct(data)
+			.then(()=>{
+				this.props.refreshCurrentUser()
+				navigate('/products')
+			})
 		})
 	}
 
@@ -54,7 +51,7 @@ class AddProduct extends Component{
 				  <Form.Group className="catSelect" controlId="exampleForm.ControlSelect1">
 					<Form.Label>Select Category:</Form.Label>
 					<Form.Control id="cat-input" name="cat-input" as="select">
-					<option value="suits">Suits</option>
+					<option value="pants">Pants</option>
 					<option value="footwear">Footwear</option>
 					<option value="clothing">Clothing</option>
 					<option value="accessories">Accessories</option>

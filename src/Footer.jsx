@@ -4,7 +4,6 @@ import { MdHome } from "react-icons/md";
 import ScrollUpButton from "react-scroll-up-button"; //Add this line Here
 
 import {
-    Nav,
     Navbar,
     Col,
     Container
@@ -21,15 +20,11 @@ class Footer extends Component{
         }
     }
     
-
-
     componentDidMount(){
       window.addEventListener("scroll", this.handleScroll);
 
     }
 
-
- 
     componentWillUnmount() {
         window.removeEventListener("scroll", this.handleScroll);
       }
@@ -56,17 +51,13 @@ class Footer extends Component{
 
 
 render () {
-    var user = this.props;
-    console.log(user)
-  
-    // var user = this.state.currentUser;
     return (
         <Navbar sticky="bottom" className={classnames("footer", {
           "footer--hidden": !this.state.visible
         })}>
         <Container>
 
-          <Col className="lCol">threads</Col><Col onClick={this.goHome} className="cCol linkColor"><MdHome/>
+          <Col className="lCol">inline</Col><Col onClick={this.goHome} className="cCol linkColor"><MdHome/>
           </Col><Col className="rCol linkColor"><ScrollUpButton ContainerClassName="ScrollUpButton__Container" TransitionClassName="ScrollUpButton__Toggled">
             <FiChevronUp/>
           </ScrollUpButton></Col>

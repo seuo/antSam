@@ -4,13 +4,17 @@
 
 .carousel-container {
     background-color: $color-1;
-    width: 100vw;
+    width: 100%;
 }
 
 .carousel-container2 {
     background-color: $color-0;
 }
-
+.react-multi-carousel-item {
+    .Item {
+        margin-left: 0.4em;
+    }
+}
 .custom-dot-list-style {
     display: flex;
     justify-content: space-between;

@@ -71,6 +71,11 @@
     // flex: 1 0 70%;
     padding-top: 1em;
 
+    .carousel-item-next, .carousel-item-prev, .carousel-item.active {
+        display: flex;
+        justify-content: center;
+    }
+
     .card {
         border: 0;
         margin-top: 0.2em;
@@ -80,13 +85,7 @@
         height: 100%;
         justify-content: flex-end;
         background-color: transparent;
-        .itemPrice {
-            color:$color-5;
-            font-size:.8em;
-            display: flex;
-            justify-content: flex-end;
-            margin-bottom: .5em;
-        }
+        // height: 21em;
         .card-img-featured {
             padding: 0;
             width: 75vw;
@@ -96,9 +95,30 @@
             justify-content: flex-end;
             flex-direction: column;
             flex: 0;
-            padding: 1em 0 0;
+            padding: 0em;
+
+            .productDetailsInfo.col {
+                display: flex;
+                justify-content: space-between;
+                padding: 1em 2em;
+                flex-direction: column;
+                p {
+                    justify-content: space-around;
+                    padding: 0em 2em;
+                }
+            }
+
             h5 {
                 text-align: center;
+            }
+            .col-3 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 0em;
+                width: 6em;
+                margin-left: 1em;
+                align-self: flex-end;
             }
             .card-title {
                 display: flex;
@@ -106,6 +126,7 @@
                 align-items: center;
                 padding: 0;
                 font-size:1em;
+
             }
             img {
                 display: block;
@@ -177,6 +198,8 @@
     }
 }
 
+
+
 .purchasesItem {
     width: 100%;
     .media {
@@ -206,14 +229,115 @@
 }
 
 .modalText {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     h6 {
         padding: 0em;
-        margin:0em;
+        margin-top:1em;
     }
-    padding: 1em;
-    text-align: center;
+    text-align:center;
+}
+
+.deleteModal{
+    color:$color-3;
+    border:none;
+    border-bottom:$color-4;
+    background-color:transparent;
+    margin:0;
+    padding: 0;
+    height:80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    span {
+        justify-self: flex-start;
+        display:flex;
+        justify-content: space-between;
+        padding:1em;
+        align-items: flex-end;
+        color:$color-6;
+        a {
+            color:$color-4;
+            font-size:1.5em;
+            span {
+                padding:0em;
+            }
+        }
+    }
+
+    h3 {
+        font-size: 1.3em;
+        padding:1em;
+    }
+    .buttons{
+        justify-content: space-between;
+        display: flex;
+        padding:0 5em;
+    }
+    button{
+        background-color: #f2f2f2;
+        border: none;
+        color: $color-6;
+        border-bottom: thin solid #A68B3C;
+        border-radius: 0;
+    }
+}
+
+.addPhoto{
+    display: flex;
+    margin: 1em;
+}
+
+.deleteButton{
+    position: absolute;
+    z-index: 10;
+    color: black;
+    right: 1em;
+    top: 1em;
+    font-size: 1.2em;
+}
+
+.productImage{
+    // margin: auto;
+    width: 100%;
+}
+
+
+//misc
+
+.carousel {
+    position: relative;
+    width: 100%;
+}
+
+.carousel-inner {
+    background-color:$color-1;
+}
+
+
+.carousel-indicators {
+    margin-bottom: 0;
+    height: .9em;
+    li {
+    }
+}
+.Item .card .card-body .productImage {
+    img {
+        display: block;
+        max-width: inherit;
+        max-height: 13em;
+        width: inherit;
+        height: inherit;
+        object-fit: contain;
+        }
+}
+
+.formGridPrice {
     display: flex;
     align-items: center;
-    flex-direction: row;
-    justify-content: space-around;
 }
+
+// .productPrice.card-text {
+//     justify-content: space-around;
+// }

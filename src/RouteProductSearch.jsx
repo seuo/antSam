@@ -4,7 +4,6 @@ import SearchResults from './SearchResults';
 import SearchBox from './SearchBox';
 
 import {
-    Col,
     Row,
     Container
 } from 'react-bootstrap';
@@ -40,7 +39,7 @@ class RouteProductSearch extends Component {
 
       render() {
         let searchResults = this.state.data.filter((item) => {
-            return item.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+            return item.description.toLowerCase().includes(this.state.searchTerm.toLowerCase())
         })
         return (
 

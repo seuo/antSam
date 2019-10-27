@@ -1,12 +1,7 @@
 import React, {Component} from 'react';
-import {Link, navigate} from '@reach/router';
-import {Card,Container, Button,Col, ListGroup} from 'react-bootstrap';
+import {Container} from 'react-bootstrap';
 
 class RouteThanks extends Component{
-  constructor(props){
-    super(props);
-  }
-
 
 
   render(){

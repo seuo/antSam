@@ -9,17 +9,20 @@
     bottom: 0;
     transition: top 0.6s;
     transition:ease all .3s;
-    z-index: 9;
+    z-index: 50;
     .lCol {
       display: flex;
       align-items: center;
       justify-content: flex-start;
       padding:0em;
+      font-family: 'ZCOOL XiaoWei', serif;
+      font-size:1.2em;
   }
   .cCol {
 
     svg {
       font-size:1.8em;
+      color:$color-0;
     }
   }
     .rCol {
@@ -39,6 +42,7 @@
     svg {
       font-size:3em;
       stroke-width: 1;
+      color:$color-0;
     }
 }
 

@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import Item from './Item';
-import {Router, Link, navigate} from '@reach/router';
+import {Link} from '@reach/router';
 import {api} from './API';
 import Carousel from 'react-multi-carousel';
-
-
 import {
     Col,
     Card,
@@ -20,16 +18,16 @@ const responsive = {
             max: 3000,
             min: 1024
         },
-        items: 5,
-        partialVisibilityGutter: 40 // this is needed to tell the amount of px that should be visible.
+        items: 3,
+        partialVisibilityGutter: 55 // this is needed to tell the amount of px that should be visible.
     },
     tablet: {
         breakpoint: {
             max: 1024,
             min: 464
         },
-        items: 2,
-        partialVisibilityGutter: 30 // this is needed to tell the amount of px that should be visible.
+        items: 3,
+        partialVisibilityGutter: 55 // this is needed to tell the amount of px that should be visible.
     },
     mobile: {
         breakpoint: {
@@ -37,7 +35,7 @@ const responsive = {
             min: 0
         },
         items: 1,
-        partialVisibilityGutter: 70 // this is needed to tell the amount of px that should be visible.
+        partialVisibilityGutter: 110 // this is needed to tell the amount of px that should be visible.
     }
 }
 
@@ -62,8 +60,9 @@ class ProductListings extends Component {
     }
 
     render() {
-        var {products} = this.state;
-        
+        var {
+            products
+        } = this.state;
         return (
 
             <div className="Item carousel-container">
@@ -174,11 +173,10 @@ class ProductListings extends Component {
                         </Card>
                     </div>
                 </Carousel>
-                <Container>
-
+                <Container className="productsListing-Container">
                     <Row className="productsListing">
                         {
-                            products.map((item) => {
+                            products.reverse().map((item) => {
                                 var itemProps = {
                                     ...item,
                                     key: item.id,
