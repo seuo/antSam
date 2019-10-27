@@ -57,7 +57,7 @@ render () {
         })}>
         <Container>
 
-          <Col className="lCol">inline</Col><Col onClick={this.goHome} className="cCol linkColor"><MdHome/>
+          <Col className="lCol">inshop</Col><Col onClick={this.goHome} className="cCol linkColor"><MdHome/>
           </Col><Col className="rCol linkColor"><ScrollUpButton ContainerClassName="ScrollUpButton__Container" TransitionClassName="ScrollUpButton__Toggled">
             <FiChevronUp/>
           </ScrollUpButton></Col>
