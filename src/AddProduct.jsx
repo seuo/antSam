@@ -53,7 +53,7 @@ class AddProduct extends Component{
 					<Form.Control id="cat-input" name="cat-input" as="select">
 					<option value="pants">Pants</option>
 					<option value="footwear">Footwear</option>
-					<option value="clothing">Clothing</option>
+					<option value="tops">Tops</option>
 					<option value="accessories">Accessories</option>
 					</Form.Control>
 				</Form.Group>

@@ -1,10 +1,11 @@
 import axios from 'axios';
 
-var url = 'http://115.188.128.176/api';
-var server = 'http://115.188.128.176:4001/';
 
-// var url = 'http://localhost:4001/api';
-// var server = 'http://localhost:4001/';
+var url = 'http://localhost:4001/api';
+var server = 'http://localhost:4001/';
+
+
+
 
 
 var api = {

@@ -169,6 +169,10 @@ a {
   padding-top: 1em;
 }
 
+.Item h3 {
+  font-size: 1.7em;
+}
+
 .Item .carousel-item-next, .Item .carousel-item-prev, .Item .carousel-item.active {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -924,8 +928,8 @@ a {
 }
 
 .dropdown-menu.show {
-  -webkit-transform: translate3d(-8.5em, 1em, 0px) !important;
-          transform: translate3d(-8.5em, 1em, 0px) !important;
+  -webkit-transform: translate3d(-8em, 1em, 0px) !important;
+          transform: translate3d(-8em, 1em, 0px) !important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1318,6 +1322,7 @@ a {
 
 .imageGrid .jumbotron-fluid {
   padding: 0;
+  width: 100%;
   margin-bottom: 0;
 }
 
@@ -1553,7 +1558,6 @@ a {
 .Header {
   position: relative;
   z-index: 9;
-  height: 5em;
 }
 
 .Header .navBarbot {
@@ -1668,7 +1672,7 @@ a {
 .Header .navbar-default {
   background-color: transparent;
   border: none;
-  max-width: 2.3em;
+  max-width: 3.5em;
   padding: 0;
   border-radius: 50%;
 }
@@ -1676,7 +1680,7 @@ a {
 .Header .Logo {
   padding-top: .5em;
   padding-bottom: .5em;
-  width: 5em;
+  width: 9em;
   padding-right: .5em;
 }
 
@@ -1691,8 +1695,8 @@ a {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  padding-left: 2em;
-  padding-right: 2em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
   padding-bottom: .5em;
 }
 
@@ -1899,6 +1903,7 @@ a {
   font-family: Raleway;
   padding-left: 1.3em;
   line-height: 1.5;
+  font-size: 1.1em;
 }
 
 .section .FilterCat .card-header .backArrow {

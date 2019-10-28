@@ -30,6 +30,10 @@ import { Scrollbars } from 'react-custom-scrollbars';
 
 import {api,server} from './API';
 
+
+
+
+
 class App extends Component{
   constructor(props){
   super(props);
@@ -41,6 +45,12 @@ class App extends Component{
       dropdownOpen: false,
     }
   }
+
+
+
+
+ 
+
 
 openModal = () => {
     this.setState({visible: true});
@@ -99,7 +109,6 @@ refreshCurrentUser = ()=>
       var {categories} = this.state;
       
     return(
-
 
 <Container className="wrap">
     <Scrollbars autoHideTimeout={0} autoHideDuration={0}>
@@ -224,6 +233,7 @@ refreshCurrentUser = ()=>
           </Scrollbars>
           <Footer/>
         </Container>
+
     );
   }
 }
