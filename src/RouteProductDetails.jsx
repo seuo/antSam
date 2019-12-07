@@ -152,7 +152,7 @@ class RouteProductDetails extends Component {
                     </span>
                     <Login
                         closeModal={this.closeLoginModal}
-                        updateCurrentUser={this.updateCurrentUser}/>
+                        updateCurrentUser={this.props.updateCurrentUser}/>
                 </div>
             </Modal>
             <Modal

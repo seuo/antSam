@@ -71,7 +71,6 @@ class Login extends Component {
   
   handleSubmitLogin=(e)=>{
     e.preventDefault()
-
     var {username1,password1} = this.state
     var data = {
         username: username1,
@@ -82,11 +81,13 @@ class Login extends Component {
         username: '',
         password: '',
     })
+
     api.authenticate(data).then(res =>{
         var user = res.data
         this.props.updateCurrentUser(user)
     
         return user
+
     })
     .then(user => {
         if(user){
@@ -132,8 +133,8 @@ class Login extends Component {
                     placeholder="Enter username"
                     onChange={this.handleInputChange}
                     value={this.state.username1}
-                    validators={['required','minStringLength:2','maxStringLength:7']}
-                    errorMessages={['User name is required','Minimum lenghth is 2 ','Max lenghth is 7']}
+                    validators={['required','minStringLength:2','maxStringLength:30']}
+                    errorMessages={['User name is required','Minimum lenghth is 2 ','Max lenghth is 30']}
 
                     />
                 </div>
@@ -180,8 +181,8 @@ class Login extends Component {
                         placeholder="Enter Name"
                         onChange={this.handleInputChange}
                         value={this.state.name}
-                        validators={['required', 'isString','minStringLength:2','maxStringLength:7']}
-                        errorMessages={['Name is required', 'Name is not valid','Minimum string is 2','Max lenghth is 7']}
+                        validators={['required', 'isString','minStringLength:2','maxStringLength:30']}
+                        errorMessages={['Name is required', 'Name is not valid','Minimum string is 2','Max lenghth is 30']}
 
                         />
                     </div>

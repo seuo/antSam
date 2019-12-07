@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import {Link} from '@reach/router';
 import {api, server} from './API';
 import {Card, Container, Carousel, Button, ListGroup} from 'react-bootstrap';
-import Modal from 'react-awesome-modal';
-import {MdClose} from "react-icons/md";
+
 
 class UserProduct extends Component{
   constructor(props){
@@ -13,13 +12,7 @@ class UserProduct extends Component{
     }
   }
   
-  openModal = () => {
-    this.setState({visible: true});
-  }
 
-  closeModal = () => {
-    this.setState({visible: false});
-  }
 
   deleteProduct = () => {
     var {id, refreshData} = this.props;
@@ -94,27 +87,6 @@ class UserProduct extends Component{
       </Card>
     </div>
 
-    <Container className="modalStyle">
-      <Modal
-          visible={this.state.visible}
-          width="90%"
-          height="50%"
-          effect="fadeInUp"
-          onClickAway={() => this.closeModal()}>
-          <div className="deleteModal">
-              <span>
-                  <a href="javascript:void(0);" onClick={() => this.closeModal()}>
-                  <MdClose/>
-                  </a>
-              </span>
-              <h3>Are You Sure You Want To Delete This Product?</h3>
-              <div class="buttons">
-                <Button variant="primary" onClick={() => this.closeModal()}>Cancel</Button>
-                <Button variant="primary" onClick={() => this.deleteProduct()}>Delete</Button>
-              </div>
-          </div>
-      </Modal>
-    </Container>
     </>
     );
   }

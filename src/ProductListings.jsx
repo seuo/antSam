@@ -35,7 +35,7 @@ const responsive = {
             min: 0
         },
         items: 1,
-        partialVisibilityGutter: 110 // this is needed to tell the amount of px that should be visible.
+        partialVisibilityGutter: 100 // this is needed to tell the amount of px that should be visible.
     }
 }
 
@@ -67,7 +67,7 @@ class ProductListings extends Component {
 
             <div className="Item carousel-container">
                 <h3>Featured</h3>
-                <Carousel swipeable={true} draggable={true} showDots={true} responsive={responsive} ssr={true}
+                <Carousel swipeable={true} draggable={false} showDots={true} responsive={responsive} ssr={true}
                     // means to render carousel on server-side.
                     infinite={true} autoPlay={this.props.deviceType !== "mobile"
                         ? false
